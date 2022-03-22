@@ -1,4 +1,11 @@
-// @font-face {
-//     font-family: "Selna";
-//     src: url("../fonts/Selna/Selna\ Regular.ttf") format("truetype");
-// }
+@import 'vars';
+
+@font-face {
+    font-family: $headerFont;
+    src: url("../fonts/Selna/Selna\ Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: $generalFont;
+    src: url("../fonts/Helvetica/helvetica_regular.otf") format("truetype");
+}

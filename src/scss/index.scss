@@ -1,9 +1,62 @@
-@use 'global';
-@use 'fonts';
-@use 'vars';
-@use "blocks/header";
-@use "blocks/footer";
-@use "pages/home";
-@use "pages/cart";
-@use "pages/catalog";
-@use "pages/product";
+@import 'fonts';
+@import 'vars';
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/subscribe";
+@import "pages/main/mainBanner";
+@import "pages/main/ourFavorites";
+@import "pages/main/aboutUs";
+@import "pages/main/followUs";
+@import "pages/catalog/catalog";
+@import "pages/basket/basket";
+@import "pages/product/product";
+
+body {
+    height: 100%;
+    font-family: $generalFont;
+    color: $textColor;
+    background-color: $bgColor;
+}
+
+html {
+    height: 100%;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.container {
+    width: 100%;
+}
+
+.container__row {
+    width: 95%;
+    margin: auto;
+    min-height: 80px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: $headerFont;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-size: 62px;
+}
+
+h2 {
+    font-size: 50px;
+}
