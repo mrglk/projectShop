@@ -62,6 +62,10 @@
         order: 2;
     }
 
+    .header__opportunities .header__links_style:first-child {
+        padding-right: 0;
+    }
+
     .header__logo {
         order: 1;
         width: 100%;
