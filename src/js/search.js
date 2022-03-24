@@ -64,7 +64,7 @@ function createPage(cards) {
         cards.forEach((card) => {
             let name = card.querySelector(".catalog__name");
 
-            if (name && name.innerText.includes(searchInput.trim())) {
+            if (name && name.innerText.includes(searchInput.toLowerCase().trim())) {
                 card.classList.remove("catalog__hide");
                 document.getElementById("SearchOnRequest").innerText = searchInput;
                 count++;

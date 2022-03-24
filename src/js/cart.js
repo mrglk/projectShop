@@ -59,8 +59,7 @@ function createBasket(goods) {
                         </a>
                         <div class="productDelete">delete</div>
                     </div>
-                    <div class="productSize"><span>${productCards.get(item.name).size}</span>
-                    </div>
+                    <div class="productSize">${productCards.get(item.name).size}</div>
                     <div class="productCount">
                         <div class="productCountBt">
                             <button class="buttonCountMinus countBt">-</button>
