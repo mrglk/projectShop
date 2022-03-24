@@ -3,89 +3,90 @@ import {
 } from "./getProducts";
 
 const filterLinks = document.querySelectorAll('.catalogHeader__link');
-const urlGroupName = window.location.search.replace( '?group=', '');
+const urlGroupName = window.location.search.replace('?group=', '');
 const pagination = document.querySelector(".js-pagination");
 
 export function initCatalog() {
-getProducts().then(data => {
-    const totalProducts = data.length;
-    const productsPerPage = 9;
-    const totalPages = Math.ceil(totalProducts / productsPerPage);
+    getProducts().then(data => {
+        const totalProducts = data.length;
+        const productsPerPage = 9;
+        const totalPages = Math.ceil(totalProducts / productsPerPage);
 
-    let currentPage = 1;
-    let offset = 0;
+        let currentPage = 1;
+        let offset = 0;
 
-    initPagination(totalProducts, totalPages, productsPerPage);
+        initPagination(totalProducts, totalPages, productsPerPage);
 
-    if (urlGroupName) {
-        pagination.innerHTML = "";
-        renderCardsForCatalog(filterCatalog(urlGroupName, data).slice(offset, offset + 9));
-                filterLinks.forEach(link => {
-                    link.classList.toggle("catalogHeader__link_active", link.innerHTML.toLowerCase() == urlGroupName);
-                })               
-    } else {
-        renderCardsForCatalog(data.slice(offset, offset + 9))
-    };
-
-    for (let i = 0; i < filterLinks.length; i++) {
-        filterLinks[i].addEventListener("click", function(event){
-            event.preventDefault()
+        if (urlGroupName) {
+            pagination.innerHTML = "";
+            renderCardsForCatalog(filterCatalog(urlGroupName, data).slice(offset, offset + 9));
             filterLinks.forEach(link => {
-                link.classList.remove("catalogHeader__link_active");
-        });
-        let selectCategory = filterCatalog(filterLinks[i].innerText.toLowerCase(), data);
-        initPagination(selectCategory.length, Math.ceil(selectCategory.length / productsPerPage), productsPerPage)
-        setGetParameter("group", filterLinks[i].innerText.toLowerCase());
-        renderCardsForCatalog(selectCategory);
-        filterLinks[i].classList.add("catalogHeader__link_active");
-        });
-    };
-
-    pagination.addEventListener("click", function(e) {
-        const element = e.target;
-        
-        if(element.classList.contains("js-pagi-number")) {
-        const newPage = Number(element.innerText)
-        setPage(newPage)
-    }
-    if (element.classList.contains('js-pagi-next')) {
-        element.classList.remove("pagination__link__disabled")
-        if (currentPage == totalPages ) {
-            element.classList.add("pagination__link__disabled")
+                link.classList.toggle("catalogHeader__link_active", link.innerHTML.toLowerCase() == urlGroupName);
+            })
         } else {
-            setPage(currentPage + 1)
-        }
-    }
-        if (element.classList.contains('js-pagi-back')) {
-            element.classList.remove("pagination__link__disabled")
-            if (currentPage == 1) {
-                element.classList.toggle("pagination__link__disabled")
-            } else {
-                setPage(currentPage - 1)
+            renderCardsForCatalog(data.slice(offset, offset + 9))
+        };
+
+        for (let i = 0; i < filterLinks.length; i++) {
+            filterLinks[i].addEventListener("click", function (event) {
+                event.preventDefault()
+                filterLinks.forEach(link => {
+                    link.classList.remove("catalogHeader__link_active");
+                });
+                let selectCategory = filterCatalog(filterLinks[i].innerText.toLowerCase(), data);
+                initPagination(selectCategory.length, Math.ceil(selectCategory.length / productsPerPage), productsPerPage)
+                setGetParameter("group", filterLinks[i].innerText.toLowerCase());
+                renderCardsForCatalog(selectCategory);
+                filterLinks[i].classList.add("catalogHeader__link_active");
+            });
+        };
+
+        pagination.addEventListener("click", function (e) {
+            const element = e.target;
+
+            if (element.classList.contains("js-pagi-number")) {
+                const newPage = Number(element.innerText)
+                setPage(newPage)
             }
+            if (element.classList.contains('js-pagi-next')) {
+                element.classList.remove("pagination__link__disabled")
+                if (currentPage == totalPages) {
+                    element.classList.add("pagination__link__disabled")
+                } else {
+                    setPage(currentPage + 1)
+                }
+            }
+            if (element.classList.contains('js-pagi-back')) {
+                element.classList.remove("pagination__link__disabled")
+                if (currentPage == 1) {
+                    element.classList.toggle("pagination__link__disabled")
+                } else {
+                    setPage(currentPage - 1)
+                }
+            }
+        })
+
+        function setPage(page) {
+            currentPage = page;
+            offset = page * productsPerPage;
+            renderCardsForCatalog(data.slice((currentPage - 1) * productsPerPage, ((currentPage - 1) * productsPerPage) + 9))
+            window.scrollTo({
+                top: document.querySelector(".catalogHeader").offsetTop,
+                behavior: 'smooth',
+            });
+            setActivePageClass(currentPage);
         }
-    })
 
-    function setPage(page) {
-        currentPage = page;
-        offset = page * productsPerPage;
-        renderCardsForCatalog(data.slice((currentPage - 1) * productsPerPage, ((currentPage - 1) * productsPerPage) + 9))
-        window.scrollTo({
-            top: document.querySelector(".catalogHeader").offsetTop,
-            behavior: 'smooth',
-        });
-        setActivePageClass(currentPage);
-    }
+        function setActivePageClass(page) {
+            const paginationLink = document.querySelectorAll(".pagination__link");
+            paginationLink.forEach(link => {
+                link.classList.toggle("pagination__link_active", link.innerText == page);
+            });
+        }
 
-    function setActivePageClass(page) {
-        const paginationLink = document.querySelectorAll(".pagination__link");
-        paginationLink.forEach(link => {
-            link.classList.toggle("pagination__link_active", link.innerText == page);
-        });
-    }
-    
 
-}); }
+    });
+}
 
 export function createCardForCatalog(item) {
     return `<div class="catalog__item">
@@ -105,8 +106,8 @@ export function createCardForCatalog(item) {
         </div>
         <div class="catalog__basketWrapper hidden">
             <div class="catalog__basket">
-                <img class="catalog__icon js-catalogBasket" src="../img/bag.svg" alt="Cart">
-                <a class="catalog__basketLink js-catalogBasket">Add to cart</a>
+                <img class="catalog__icon" src="../img/bag.svg" alt="Cart">
+                <a class="catalog__basketLink">Add to cart</a>
             </div>
         </div>
     </div>
@@ -156,23 +157,21 @@ function initPagination(totalProd, totalPag, prodPerPage) {
         const arrowNext = ` <li class="pagination__link js-pagi-next">
         <img class="pagination__arrow js-pagi-next" src="../img/arrowNext.svg">
     </li>`;
-    let newLinks = "";
+        let newLinks = "";
 
-    for (let i = 1; i <= totalPag; i++) {
-        newLinks += `<li class="pagination__link js-pagi-number">${i}</li>`;
+        for (let i = 1; i <= totalPag; i++) {
+            newLinks += `<li class="pagination__link js-pagi-number">${i}</li>`;
+        }
+        pagination.innerHTML += arrowBack;
+        pagination.innerHTML += newLinks;
+        pagination.innerHTML += arrowNext;
+
+        const paginationLink = document.querySelectorAll(".pagination__link");
+        paginationLink.forEach(link => {
+            link.classList.toggle("pagination__link_active", link.innerText == 1);
+        });
+
+    } else {
+        pagination.classList.add("pagination__inner_hidden");
     }
-    pagination.innerHTML += arrowBack;
-    pagination.innerHTML += newLinks;
-    pagination.innerHTML += arrowNext;
-
-    const paginationLink = document.querySelectorAll(".pagination__link");
-    paginationLink.forEach(link => {
-        link.classList.toggle("pagination__link_active", link.innerText == 1);
-    });
-
-} else {
-    pagination.classList.add("pagination__inner_hidden");
 }
-}
-
-

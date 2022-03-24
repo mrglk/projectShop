@@ -8,11 +8,10 @@ export function goodsInBasket() {
     } else {
         productCards = new Map(JSON.parse(productCardsString));
     }
-    console.log(productCards);
     document.getElementById("countCart").innerHTML = productCards.size;
 
     products.forEach(product => {
-        let iconCart = product.querySelector(".catalog__basketLink");
+        let iconCart = product.querySelector(".catalog__basket");
         let cardName = product.querySelector(".catalog__name").innerHTML;
         let completeGoods = new Object();
 

@@ -55,7 +55,6 @@ function productInBasket() {
     } else {
         productCards = new Map(JSON.parse(productCardsString));
     }
-    console.log(productCards);
     document.getElementById("countCart").innerHTML = productCards.size;
 
     let iconCart = product.querySelector(".product__button");
