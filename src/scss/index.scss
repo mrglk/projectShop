@@ -70,6 +70,8 @@ h2 {
 }
 
 .containerBg {
+    display: flex;
+    flex-direction: column;
     background-color: $bgColor;
     margin-left: 12%;
     margin-right: 12%;

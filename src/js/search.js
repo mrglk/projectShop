@@ -1,10 +1,11 @@
 let elem = document.getElementById("searchBtn");
 elem.onclick = function (e) {
-        e.preventDefault();
-        let search = document.querySelector(".header__search");
+    e.preventDefault();
+    let search = document.querySelector(".header__search");
 
-        search.classList.toggle("show");
-    }
+    search.classList.toggle("show");
+}
+
 import {
     getProducts
 } from "./getProducts";
