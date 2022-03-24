@@ -15,10 +15,11 @@
 @import "pages/order/order";
 
 body {
+    background-color: $mainBgColor;
     height: 100%;
     font-family: $generalFont;
     color: $textColor;
-    background-color: $bgColor;
+    margin: 0px;
 }
 
 html {
@@ -63,4 +64,39 @@ h1 {
 
 h2 {
     font-size: 50px;
+}
+
+.containerBg {
+    background-color: $bgColor;
+    margin-left: 240px;
+    margin-right: 240px;
+}
+
+.containerBg__cloud {
+    background-image: url(../img/bg_image.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-left: 240px;
+    padding-right: 240px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.containerBg__cloudInner {
+    background-color: $bgColor;
+}
+
+@media screen and (max-width:$tablet) {
+    body {
+        background-color: $bgColor;
+    }
+
+    .containerBg__cloud {
+        background-image: none;
+        padding: 0;
+    }
+
+    .containerBg {
+        margin: 0;
+    }
 }

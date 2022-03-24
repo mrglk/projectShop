@@ -1,0 +1,132 @@
+/* Breakpoints */
+/* Colors */
+/* Fonts */
+@font-face {
+  font-family: "Selna";
+  src: url("../fonts/Selna/Selna Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("../fonts/Helvetica/helvetica_regular.otf") format("truetype");
+}
+
+/* Breakpoints */
+/* Colors */
+/* Fonts */
+.header__inner {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header__links_style {
+  font-family: "Helvetica";
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16.96px;
+  line-height: 19.51px;
+  color: black;
+}
+
+.header__links_style:hover {
+  cursor: pointer;
+}
+
+.header__links .header__links_style:first-child {
+  padding-right: 15px;
+}
+
+.header__opportunities .header__links_style:first-child {
+  padding-right: 30px;
+}
+
+.header__opportunities .header__links_style:nth-child(2) {
+  padding-right: 5px;
+}
+
+.header__links_circle {
+  padding: 4px 9px;
+  border: 1px solid red;
+  border-radius: 50%;
+}
+
+.link {
+  font-size: 20px;
+  color: #1D1B19;
+  text-decoration: none;
+  padding: 3px;
+  border-bottom: 1px solid #1D1B19;
+}
+
+.link:hover {
+  cursor: pointer;
+  border-bottom: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Helvetica";
+  color: #1D1B19;
+  background-color: #F1EAE4;
+}
+
+html {
+  height: 100%;
+}
+
+main {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.container {
+  width: 100%;
+}
+
+.container__row {
+  width: 95%;
+  margin: auto;
+  min-height: 80px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Selna";
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: 62px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+/*# sourceMappingURL=index.css.map */
