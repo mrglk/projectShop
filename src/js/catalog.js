@@ -40,8 +40,7 @@ function createCardForCatalog(item) {
         </div>
         <div class="catalog__basketWrapper hidden">
             <div class="catalog__basket">
-            <img class="catalog__icon" src="../img/bag.svg" alt="Cart">
-                <a class="catalog__basketLink">Add to cart</a>
+                <a class="catalog__basketLink"><img class="catalog__icon" src="../img/bag.svg" alt="Cart">Add to cart</a>
             </div>
         </div>
     </div>
