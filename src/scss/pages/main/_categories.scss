@@ -1,0 +1,42 @@
+.categories__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 5em;
+    margin-top: 140px;
+}
+
+.categories__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 150px 0 150px 0;
+}
+
+.categories__link {
+    text-align: center;
+    font-family: $headerFont;
+    font-weight: 500; //????
+    // font-size: 56px;
+    font-size: 3.5vw;
+    color: $textColor;
+    text-decoration: none;
+
+    // :hover {
+    //     // border-bottom: 2px solid $textColor; //????
+    //     // cursor: pointer;
+    // }
+}
+
+.categories__text:hover {
+    border-bottom: 2px solid $textColor; //????
+    // cursor: pointer;
+}
+
+.categories__photo {
+    width: 30vw;
+}
+
+.categories__photo_bootom {
+    display: flex;
+    align-items: flex-end;
+}
