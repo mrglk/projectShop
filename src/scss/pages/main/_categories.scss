@@ -40,3 +40,35 @@
     display: flex;
     align-items: flex-end;
 }
+
+
+@media screen and (max-width:$mobile) {
+
+    .categories__inner {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .categories__nav {
+        margin: 0;
+    }
+
+    .categories__imgWrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .categories__photo_bootom {
+        display: flex;
+        justify-content: center;
+    }
+
+    .categories__photo {
+        width: 85vw;
+    }
+
+    .categories__link {
+        font-size: 9vw;
+    }
+}

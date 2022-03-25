@@ -60,3 +60,63 @@ a:hover .ourFavorites__imgWrapper img {
     font-size: 20px;
     color: #555555;
 }
+
+
+@media screen and (max-width:1200px) {
+
+    .ourFavorites__header {
+        margin-top: 80px;
+        margin-bottom: 40px;
+    }
+
+    .ourFavorites__title {
+        font-size: 35px;
+    }
+
+    .ourFavorites__link {
+        font-size: 15px;
+    }
+
+    .ourFavorites__name {
+        font-size: 17px;
+    }
+
+    .ourFavorites__price {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:$mobile) {
+
+    .ourFavorites__line1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+        margin-bottom: 35px;
+    }
+
+    .ourFavorites__item {
+        width: 85%;
+    }
+
+
+    .ourFavorites__header {
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+
+    .ourFavorites__title {
+        font-size: 25px;
+    }
+
+    .ourFavorites__link {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .ourFavorites__title {
+        font-size: 20px;
+    }
+}
