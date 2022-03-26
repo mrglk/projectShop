@@ -29,7 +29,7 @@
     color: $textColor;
     text-decoration: none;
 
-    :hover {
+    :hover .ourFavorites__name {
         text-decoration: underline;
     }
 }

@@ -13,23 +13,26 @@
 }
 
 .categories__link {
+    position: relative;
     text-align: center;
     font-family: $headerFont;
-    font-weight: 500; //????
-    // font-size: 56px;
     font-size: 3.5vw;
     color: $textColor;
     text-decoration: none;
 
-    // :hover {
-    //     // border-bottom: 2px solid $textColor; //????
-    //     // cursor: pointer;
-    // }
+    :hover {
+        cursor: pointer;
+    }
 }
 
-.categories__text:hover {
-    border-bottom: 2px solid $textColor; //????
-    // cursor: pointer;
+.categories__link:hover::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: $textColor;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
 .categories__photo {
@@ -40,7 +43,6 @@
     display: flex;
     align-items: flex-end;
 }
-
 
 @media screen and (max-width:$mobile) {
 
