@@ -13,19 +13,23 @@
 }
 
 .categories__link {
-    position: relative;
     text-align: center;
     font-family: $headerFont;
     font-size: 3.5vw;
     color: $textColor;
     text-decoration: none;
 
+
     :hover {
         cursor: pointer;
     }
 }
 
-.categories__link:hover::after {
+.categories__text {
+    position: relative;
+}
+
+.categories__text:hover::after {
     content: "";
     height: 2px;
     width: 100%;
@@ -42,6 +46,13 @@
 .categories__photo_bootom {
     display: flex;
     align-items: flex-end;
+}
+
+@media screen and (max-width:$tablet) {
+    .categories__link {
+        font-size: 4vw;
+    }
+
 }
 
 @media screen and (max-width:$mobile) {

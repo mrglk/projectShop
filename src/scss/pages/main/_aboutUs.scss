@@ -32,12 +32,6 @@
     margin-top: 45px;
 }
 
-
-.subscribe {
-    margin-top: 200px;
-}
-
-
 @media screen and (max-width:1200px) {
 
     .aboutUs__inner {
@@ -62,6 +56,13 @@
         font-size: 15px;
     }
 }
+
+@media screen and (max-width: $tablet) {
+    .aboutUs__title {
+        font-size: 30px;
+    }
+}
+
 
 @media screen and (max-width:$mobile) {
     .aboutUs__inner {

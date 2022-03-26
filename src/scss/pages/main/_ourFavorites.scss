@@ -86,6 +86,12 @@ a:hover .ourFavorites__imgWrapper img {
     }
 }
 
+@media screen and (max-width: $tablet) {
+    .ourFavorites__title {
+        font-size: 30px;
+    }
+}
+
 @media screen and (max-width:$mobile) {
 
     .ourFavorites__line1 {
