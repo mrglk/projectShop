@@ -27,6 +27,14 @@
             </nav>
         </header>
         <main>
+            <div class="container__row">
+                <ul class="breadcrumb">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./catalog.html">Catalog</a></li>
+                    <li><span class="breadcrumb__span">7 gold bags lari</span></li>
+                </ul>
+            </div>
+
             <section class="product">
                 <div class="product__inner container__row">
                     <div class="product__photo">
@@ -45,12 +53,17 @@
                         </div>
                         <div class="product__size">
                             <span class="product__span">Size:</span>
-                            <select class="product__select">
-                                <option value="15">15</option>
-                                <option value="16">16</option>
-                                <option value="17">17</option>
-                                <option value="18">18</option>
-                            </select>
+                            <div class="product__selectWrapper">
+                                <!-- <div class="product__selectArrow"></div>
+                                <div class="product__selectArrow"></div> -->
+                                <div class="product__selectArrow"><img src="../img/arrow.svg"></div>
+                                <select class="product__select">
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="product__buttons">
                             <button class="product__button">Add to cart</button>
