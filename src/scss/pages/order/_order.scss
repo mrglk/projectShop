@@ -1,0 +1,128 @@
+.orderNav {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        text-decoration: none;
+        color: $textColor;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    p {
+        text-decoration: underline;
+    }
+}
+
+.checkout__form {
+    margin: 60px 0;
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+        margin: 30px 0;
+        font-family: $headerFont;
+        font-size: 25px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.checkout__formItem {
+    width: 47%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin fieldStyle {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $textColor;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.checkout__formField {
+    @include fieldStyle;
+}
+
+.formField__wrapper {
+    height: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.checkbox__wrapper {
+    margin: 2em 0;
+}
+
+.checkout__checkbox {
+    transform: scale(1.5);
+}
+
+.userInfo {
+    border: none;
+    padding: 0;
+    display: grid;
+    grid-template-areas: 'name curname'
+        'tel .';
+    gap: 10px;
+}
+
+.adress {
+    margin-top: 2em;
+}
+
+.radio__wrapper {
+    display: inline-block;
+    margin-bottom: 1em;
+}
+
+.orderSummary {
+    display: flex;
+    flex-direction: column;
+}
+
+.orderLink {
+    width: fit-content;
+    align-self: end;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: $textColor;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.discount {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.promo {
+    @include fieldStyle;
+    width: 85%;
+}
+
+.applyDiscount {
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $textColor;
+
+    &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}

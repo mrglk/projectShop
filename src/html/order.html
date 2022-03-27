@@ -9,7 +9,135 @@
 </head>
 
 <body>
+    <div class="container">
+        <div class="containerBg">
+            <header class="header">
+                <nav class="header__inner container__row">
+                    <div class="header__links">
+                        <a class="header__links_style" href="">SHOP NOW</a>
+                        <a class="header__links_style" href="">LOOKBOOK</a>
+                    </div>
+                    <div class="header__logo">
+                        <img src="../img/logo.svg" alt="logo">
+                    </div>
+                    <div class="header__opportunities">
+                        <a class="header__links_style" href="">SEARCH</a>
+                        <a class="header__links_style" href="">CART</a>
+                        <a class="header__links_style header__links_circle" href="">0</a>
+                    </div>
+                </nav>
+            </header>
 
+            <main>
+                <div class="container__row">
+                    <nav class="orderNav">
+                        <a href="">Home page</a>
+                        <div>
+                            <img src="../../src/img/arrow.svg" class="image" alt="">
+                        </div>
+                        <p href="">Checkout</p>
+                    </nav>
+
+                    <form class="checkout__form">
+                        <div class="checkout__formItem">
+                            <h3>
+                                Contact information
+                            </h3>
+                            <div class="formField__wrapper">
+                                <label for="email">Your email address *</label>
+                                <input type="email" class="checkout__formField" id="email">
+                            </div>
+                            <div class="checkbox__wrapper">
+                                <input type="checkbox" class="checkout__checkbox" id="newsSubscribtion">
+                                <label for="newsSubscribtion">Subscribe for news and special offers</label>
+                            </div>
+                            <fieldset class="userInfo">
+                                <div class="formField__wrapper">
+                                    <label for="userName">Name *</label>
+                                    <input type="text" class="checkout__formField" id="userName">
+                                </div>
+                                <div class="formField__wrapper">
+                                    <label for="userSurname">Surname *</label>
+                                    <input type="text" class="checkout__formField" id="userSurname">
+                                </div>
+                                <div class="formField__wrapper">
+                                    <label for="userPhone">Phone *</label>
+                                    <input type="tel" class="checkout__formField" id="userPhone">
+                                </div>
+                            </fieldset>
+                            <h3>
+                                Delivery
+                            </h3>
+                            <div class="radio__wrapper">
+                                <input type="radio" name="delivery__radio" id="store">
+                                <label for="store">Free collect from store</label>
+                            </div>
+                            <div class="radio__wrapper">
+                                <input type="radio" name="delivery__radio" id="pick-up">
+                                <label for="pick-up">Pick-up point</label>
+                            </div>
+                            <div class="radio__wrapper">
+                                <input type="radio" name="delivery__radio" id="courier">
+                                <label for="courier">By courier</label>
+                            </div>
+                            <div class="radio__wrapper">
+                                <input type="radio" name="delivery__radio" id="standard">
+                                <label for="standard">Standard shipping</label>
+                            </div>
+                            <div class="radio__wrapper">
+                                <input type="radio" name="delivery__radio" id="international">
+                                <label for="international">Standard international shipping</label>
+                            </div>
+                            <div class="adress">
+                                <div class="formField__wrapper">
+                                    <label for="userAdress">Adress *</label>
+                                    <input type="text" class="checkout__formField" id="userAdress">
+                                </div>
+                            </div>
+                            <h3>
+                                Payment method
+                            </h3>
+                            <div class="radio__wrapper">
+                                <input type="radio" name="payment__radio" id="byCard">
+                                <label for="byCard">Credit card</label>
+                            </div>
+                            <div class="radio__wrapper">
+                                <input type="radio" name="payment__radio" id="Cash">
+                                <label for="Cash">Cash</label>
+                            </div>
+                        </div>
+
+                        <div class="checkout__formItem">
+                            <div class="orderSummary">
+                                <a href="" class="orderLink">Edit order</a>
+                                <div class="purchasesList">
+                                    <div class="product">
+                                        <div class="product__preview">
+                                            <!-- <img src="" alt="" class="image"> -->
+                                        </div>
+                                        <div class="product__describtion">
+                                            <p class="describtionText"></p>
+                                            <p class="size"></p>
+                                        </div>
+                                        <div aria-colcount="product__price"></div>
+                                    </div>
+                                </div>
+                                <form >
+                                    <div class="discount">
+                                    <input type="text" placeholder="Promo code" class="promo">
+                                    <button class="applyDiscount">Apply</button>
+                                </div>
+                                </form>
+                                <div class="subtotal"></div>
+                                <div class="total"></div>
+                                <button type="submit" class="submitButton">Order</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
 </body>
 
 </html>
