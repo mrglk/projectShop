@@ -1,4 +1,4 @@
-  // крошки 
+  // крошки - переместить в отдельный файл
 
   ul.breadcrumb {
       padding: 10px 16px;
@@ -14,7 +14,6 @@
       padding: 8px;
       color: $textColor;
       content: "/\00a0";
-      //   content: url(../../../img/bag.svg);
   }
 
   ul.breadcrumb li a {
@@ -44,9 +43,8 @@
       column-gap: 20px;
   }
 
-  .product__imgWrapper {
-      display: flex;
-      justify-content: center;
+  .product__img {
+      width: 100%;
   }
 
   .product__name {
@@ -79,7 +77,6 @@
   }
 
   .product__button {
-
       display: inline-block;
       box-sizing: border-box;
       font-size: 1.1rem;
@@ -90,11 +87,9 @@
       padding: 1.1rem 3.4rem 1.1rem 3.4rem;
       border: none;
       background-color: $mainBgColor;
-      // color: white;
 
       &:hover {
           cursor: pointer;
-          // box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
           color: $bgColor;
           background-color: $textColor;
           transition: background-color 0.4s ease;
@@ -109,10 +104,11 @@
       margin-top: 10px;
       font-weight: lighter;
       line-height: 1.5;
+      font-size: 16px;
   }
 
 
-  //селект стилоизация//
+  //селект стилизация
 
   .product__select {
       font-size: 15px;
@@ -149,25 +145,8 @@
       width: 12px;
       position: absolute;
       right: 9px;
+      pointer-events: none;
   }
-
-  //   .product__selectArrow {
-  //       position: absolute;
-  //       z-index: -9999;
-  //       border: 8px solid black;
-  //       border-bottom: 0;
-  //       right: 6px;
-  //   }
-
-  //   .product__selectArrow:nth-child(1) {
-  //       top: 11px;
-  //       border-top-color: #6C7231;
-  //   }
-
-  //   .product__selectArrow:nth-child(2) {
-  //       top: 8px;
-  //       border-top-color: #FFF;
-  //   }
 
   // селект конец
 
@@ -179,8 +158,30 @@
       }
   }
 
+  @media screen and (max-width: $tablet) {
+      .product__name {
+          font-size: 25px;
+      }
+
+      .product__price {
+          font-size: 20px;
+      }
+
+      .product__span {
+          font-size: 16px;
+      }
+
+      .product__description {
+          font-size: 15px;
+      }
+  }
+
   @media screen and (max-width: $mobile) {
       .product__inner {
           grid-template-columns: 1fr;
+      }
+
+      .product__buttons {
+          margin-top: 35px;
       }
   }
