@@ -34,7 +34,7 @@
 
 .subscribe__form {
     border-bottom: 1px solid $textColor;
-    width: 50%;
+    width: 55%;
     margin: 149px auto;
     display: flex;
     justify-content: space-between;
@@ -57,7 +57,10 @@
 
     &:focus {
         outline: none;
-        transform: scale(0.7);
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.1);
+        }
     }
 }
 
@@ -67,7 +70,7 @@
     &:hover {
         cursor: pointer;
         // box-shadow: 0 0 5px rgb(0 0 0 / 50%);
-        transform: scale(0.7);
+        transform: scale(1.1);
     }
 }
 

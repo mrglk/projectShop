@@ -31,9 +31,9 @@
             <main>
                 <div class="container__row">
                     <nav class="orderNav">
-                        <a href="">Home page</a>
-                        <div>
-                            <img src="../../src/img/arrow.svg" class="image" alt="">
+                        <a href="../html/index.html">Home page</a>
+                        <div class="arrowImg">
+                            <img src="../img/greater.png" class="image" alt="">
                         </div>
                         <p href="">Checkout</p>
                     </nav>
@@ -69,26 +69,30 @@
                                 Delivery
                             </h3>
                             <div class="radio__wrapper">
-                                <input type="radio" name="delivery__radio" id="store">
+                                <input type="radio" name="delivery__radio" id="store" class="custom-radio">
                                 <label for="store">Free collect from store</label>
                             </div>
                             <div class="radio__wrapper">
-                                <input type="radio" name="delivery__radio" id="pick-up">
+                                <input type="radio" name="delivery__radio" id="pick-up" class="custom-radio">
                                 <label for="pick-up">Pick-up point</label>
                             </div>
                             <div class="radio__wrapper">
-                                <input type="radio" name="delivery__radio" id="courier">
+                                <input type="radio" name="delivery__radio" id="courier" class="custom-radio">
                                 <label for="courier">By courier</label>
                             </div>
                             <div class="radio__wrapper">
-                                <input type="radio" name="delivery__radio" id="standard">
+                                <input type="radio" name="delivery__radio" id="standard" class="custom-radio">
                                 <label for="standard">Standard shipping</label>
                             </div>
                             <div class="radio__wrapper">
-                                <input type="radio" name="delivery__radio" id="international">
+                                <input type="radio" name="delivery__radio" id="international" class="custom-radio">
                                 <label for="international">Standard international shipping</label>
                             </div>
                             <div class="adress">
+                                <div class="formField__wrapper">
+                                    <label for="userCity">City *</label>
+                                    <input type="text" class="checkout__formField" id="userCity">
+                                </div>
                                 <div class="formField__wrapper">
                                     <label for="userAdress">Adress *</label>
                                     <input type="text" class="checkout__formField" id="userAdress">
@@ -98,44 +102,70 @@
                                 Payment method
                             </h3>
                             <div class="radio__wrapper">
-                                <input type="radio" name="payment__radio" id="byCard">
+                                <input type="radio" name="payment__radio" id="byCard" class="custom-radio">
                                 <label for="byCard">Credit card</label>
                             </div>
                             <div class="radio__wrapper">
-                                <input type="radio" name="payment__radio" id="Cash">
+                                <input type="radio" name="payment__radio" id="Cash" class="custom-radio">
                                 <label for="Cash">Cash</label>
                             </div>
                         </div>
 
                         <div class="checkout__formItem">
                             <div class="orderSummary">
-                                <a href="" class="orderLink">Edit order</a>
+                                <a href="" class="orderEdit">Edit order</a>
                                 <div class="purchasesList">
                                     <div class="product">
                                         <div class="product__preview">
-                                            <!-- <img src="" alt="" class="image"> -->
+                                            <img src="../img/product_rings.jpg" alt="" class="image">
                                         </div>
                                         <div class="product__describtion">
-                                            <p class="describtionText"></p>
-                                            <p class="size"></p>
+                                            <p class="describtionText">7 gold bags lari</p>
+                                            <p class="size">Size: 15</p>
                                         </div>
-                                        <div aria-colcount="product__price"></div>
+                                        <div class="product__price">490$</div>
                                     </div>
+                                    
                                 </div>
-                                <form >
+                                <form>
                                     <div class="discount">
-                                    <input type="text" placeholder="Promo code" class="promo">
-                                    <button class="applyDiscount">Apply</button>
-                                </div>
+                                        <input type="text" placeholder="promo code" class="discount__code">
+                                        <button class="discount__button">Apply</button>
+                                    </div>
                                 </form>
-                                <div class="subtotal"></div>
-                                <div class="total"></div>
+                                <div class="costs">
+                                    <p class="subtotalCost">Subtotal: 0$</p>
+                                    <p class="deliveryCost">Shipping: 0$</p>
+                                    <p class="discountCost">Discount: 0$</p>
+                                    <p class="totalCost">Total: 0$</p>
+                                </div>
+                                
                                 <button type="submit" class="submitButton">Order</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </main>
+            <footer class="footer container">
+                <div class="footer__inner container__row">
+                    <img src="../img/logo.svg" alt="logo">
+                    <div class="footer__list">
+                        <ul>
+                            <li class="footer__links"><a href="">Shop now</a></li>
+                            <li class="footer__links"><a href="">Collections</a></li>
+                            <li class="footer__links"><a href="">Lookbook</a></li>
+                            <li class="footer__links"><a href="">Search</a></li>
+                            <li class="footer__links"><a href="">Cart</a></li>
+                            <li class="footer__links"><a href="">FAQ</a></li>
+                            <li class="footer__links"><a href="">Contact us</a></li>
+                            <li class="footer__links"><a href="">Instagram</a></li>
+                            <li class="footer__links"><a href="">Privacy policy</a></li>
+                            <li class="footer__links"><a href="./order.html">Terms of service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="footer__text">@2021 website by rayane saada</p>
+            </footer>
         </div>
     </div>
 </body>
