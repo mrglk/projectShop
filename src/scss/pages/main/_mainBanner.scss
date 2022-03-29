@@ -37,10 +37,34 @@
     height: 100%;
 }
 
-@media screen and (min-width:1201px) and (max-width:1519px) {
+@media screen and (min-width:640px) and (max-width:1400px) {
     .mainBanner__innerText img {
         width: 40px;
         height: 40px;
+    }
+
+    .mainBanner__text {
+        font-size: 35px;
+        line-height: 55px;
+    }
+
+    .mainBanner__link {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:$mobile) {
+    .mainBanner {
+        flex-wrap: wrap;
+    }
+
+    .mainBanner__innerText {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .mainBanner__photo {
+        width: 100%;
     }
 
     .mainBanner__text {
@@ -49,43 +73,11 @@
     }
 
     .mainBanner__link {
-        font-size: 18px;
+        margin-bottom: 20px;
     }
 }
 
-@media screen and (min-width:960px) and (max-width:1200px) {
-    .mainBanner__innerText img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .mainBanner__text {
-        font-size: 26px;
-        line-height: 50px;
-    }
-
-    .mainBanner__link {
-        font-size: 15px;
-    }
-}
-
-@media screen and (min-width:901px) and (max-width:$tablet) {
-    .mainBanner__innerText img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .mainBanner__text {
-        font-size: 50px;
-        line-height: 70px;
-    }
-
-    .mainBanner__link {
-        font-size: 16px;
-    }
-}
-
-@media screen and (min-width:$mobile) and (max-width:900px) {
+@media screen and (max-width:$smallMobile) {
     .mainBanner__innerText img {
         width: 40px;
         height: 40px;
@@ -93,61 +85,10 @@
 
     .mainBanner__text {
         font-size: 30px;
-        line-height: 60px;
-    }
-
-    .mainBanner__link {
-        font-size: 16px;
-    }
-}
-
-@media screen and (min-width:466px) and (max-width:638px) {
-    .mainBanner__innerText img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .mainBanner__text {
-        font-size: 20px;
         line-height: 50px;
     }
 
     .mainBanner__link {
         font-size: 14px;
-    }
-}
-
-@media screen and (min-width:339px) and (max-width:465px) {
-    .mainBanner__innerText img {
-        width: 20px;
-        height: 20px;
-    }
-
-    .mainBanner__text {
-        font-size: 12px;
-        line-height: 40px;
-    }
-
-    .mainBanner__link {
-        font-size: 10px;
-        margin-top: 15px;
-    }
-}
-
-@media screen and (max-width:338px) {
-    .mainBanner__innerText img {
-        width: 20px;
-        height: 20px;
-        margin-bottom: 15px;
-    }
-
-    .mainBanner__text {
-        font-size: 8px;
-        line-height: 30px;
-    }
-
-    .mainBanner__link {
-        font-size: 6px;
-        margin-top: 10px;
     }
 }
