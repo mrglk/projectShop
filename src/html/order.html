@@ -28,24 +28,26 @@
                 </nav>
             </header>
 
-            <main>
+            <main class="main">
                 <div class="container__row">
                     <nav class="orderNav">
                         <a href="../html/index.html">Home page</a>
                         <div class="arrowImg">
                             <img src="../img/greater.png" class="image" alt="">
                         </div>
-                        <p href="">Checkout</p>
+                        <p>Checkout</p>
                     </nav>
 
-                    <form class="checkout__form">
+                    <form class="checkout__form" id="form"> 
                         <div class="checkout__formItem">
                             <h3>
                                 Contact information
                             </h3>
                             <div class="formField__wrapper">
                                 <label for="email">Your email address *</label>
-                                <input type="email" class="checkout__formField" id="email">
+                                <input type="email" class="checkout__formField"
+                                    id="userEmail">
+                                <div class="errorSign" id="userEmailError">!</div>
                             </div>
                             <div class="checkbox__wrapper">
                                 <input type="checkbox" class="checkout__checkbox" id="newsSubscribtion">
@@ -54,66 +56,78 @@
                             <fieldset class="userInfo">
                                 <div class="formField__wrapper">
                                     <label for="userName">Name *</label>
-                                    <input type="text" class="checkout__formField" id="userName">
+                                    <input type="text" class="checkout__formField"
+                                        id="userName">
+                                    <div class="errorSign" id="userNameError">!</div>
                                 </div>
                                 <div class="formField__wrapper">
                                     <label for="userSurname">Surname *</label>
                                     <input type="text" class="checkout__formField" id="userSurname">
+                                    <div class="errorSign" id="userSurnameError">!</div>
                                 </div>
                                 <div class="formField__wrapper">
                                     <label for="userPhone">Phone *</label>
-                                    <input type="tel" class="checkout__formField" id="userPhone">
+                                    <input type="tel" placeholder = "+7 (999) 999-99-99" class="checkout__formField" id="userPhone">
+                                    <div class="errorSign" id="userPhoneError">!</div>
                                 </div>
                             </fieldset>
                             <h3>
                                 Delivery
                             </h3>
                             <div class="radio__wrapper">
-                                <input type="radio" name="delivery__radio" id="store" class="custom-radio">
+                                <input type="radio" name="delivery__radio" id="store"
+                                    class="customRadio" checked>
                                 <label for="store">Free collect from store</label>
                             </div>
                             <div class="radio__wrapper">
-                                <input type="radio" name="delivery__radio" id="pick-up" class="custom-radio">
+                                <input type="radio" name="delivery__radio" id="pick-up" class="customRadio">
                                 <label for="pick-up">Pick-up point</label>
                             </div>
                             <div class="radio__wrapper">
-                                <input type="radio" name="delivery__radio" id="courier" class="custom-radio">
+                                <input type="radio" name="delivery__radio" id="courier" class="customRadio">
                                 <label for="courier">By courier</label>
                             </div>
                             <div class="radio__wrapper">
-                                <input type="radio" name="delivery__radio" id="standard" class="custom-radio">
+                                <input type="radio" name="delivery__radio" id="standard" class="customRadio">
                                 <label for="standard">Standard shipping</label>
                             </div>
                             <div class="radio__wrapper">
-                                <input type="radio" name="delivery__radio" id="international" class="custom-radio">
+                                <input type="radio" name="delivery__radio" id="international" class="customRadio">
                                 <label for="international">Standard international shipping</label>
                             </div>
                             <div class="adress">
-                                <div class="formField__wrapper">
+                                <div class="formField__wrapper formField__wrapper_hidden">
+                                    <label for="userCountry">Country *</label>
+                                    <input type="text" class="checkout__formField" id="userCountry">
+                                    <div class="errorSign" id="userCountryError">!</div>
+                                </div>
+                                <div class="formField__wrapper formField__wrapper_hidden">
                                     <label for="userCity">City *</label>
                                     <input type="text" class="checkout__formField" id="userCity">
+                                    <div class="errorSign" id="userCityError">!</div>
                                 </div>
-                                <div class="formField__wrapper">
+                                <div class="formField__wrapper formField__wrapper_hidden">
                                     <label for="userAdress">Adress *</label>
                                     <input type="text" class="checkout__formField" id="userAdress">
+                                    <div class="errorSign" id="userAdressError">!</div>
                                 </div>
                             </div>
                             <h3>
                                 Payment method
                             </h3>
                             <div class="radio__wrapper">
-                                <input type="radio" name="payment__radio" id="byCard" class="custom-radio">
+                                <input type="radio" name="payment__radio" id="byCard" class="customRadio">
                                 <label for="byCard">Credit card</label>
                             </div>
                             <div class="radio__wrapper">
-                                <input type="radio" name="payment__radio" id="Cash" class="custom-radio">
+                                <input type="radio" name="payment__radio" id="Cash" class="customRadio" checked>
                                 <label for="Cash">Cash</label>
                             </div>
                         </div>
 
                         <div class="checkout__formItem">
                             <div class="orderSummary">
-                                <a href="" class="orderEdit">Edit order</a>
+                                <a href="../html/basket.html" class="orderEdit">Edit order</a>
                                 <div class="purchasesList">
                                     <div class="product">
                                         <div class="product__preview">
@@ -125,21 +139,28 @@
                                         </div>
                                         <div class="product__price">490$</div>
                                     </div>
-                                    
                                 </div>
-                                <form>
-                                    <div class="discount">
-                                        <input type="text" placeholder="promo code" class="discount__code">
-                                        <button class="discount__button">Apply</button>
-                                    </div>
-                                </form>
+
+                                <div class="discount">
+                                    <input type="text" placeholder="promo code" class="discount__code">
+                                    <button class="discount__button">Apply</button>
+                                </div>
+
                                 <div class="costs">
-                                    <p class="subtotalCost">Subtotal: 0$</p>
-                                    <p class="deliveryCost">Shipping: 0$</p>
-                                    <p class="discountCost">Discount: 0$</p>
-                                    <p class="totalCost">Total: 0$</p>
+                                    <div class="subtotalCost">Subtotal: 
+                                        <p>0$</p>
+                                    </div>
+                                    <div class="deliveryCost">Shipping: 
+                                        <p>0$</p>
+                                    </div>
+                                    <div class="discountCost">Discount: 
+                                        <p>0$</p>
+                                    </div>
+                                    <div class="totalCost">Total: 
+                                        <p>0$</p>
+                                    </div>
                                 </div>
-                                
+                                <p class="errorMessage"></p>
                                 <button type="submit" class="submitButton">Order</button>
                             </div>
                         </div>

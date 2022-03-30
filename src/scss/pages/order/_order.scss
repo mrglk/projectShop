@@ -1,3 +1,18 @@
+body,
+html {
+    height: 100%;
+}
+
+.container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
 .orderNav {
     width: 20%;
     display: flex;
@@ -14,6 +29,36 @@
 
     p {
         text-decoration: underline;
+    }
+}
+
+@media (min-width: $tablet) and (max-width: $desktop) {
+    .orderNav {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width:$tablet) {
+    .orderNav {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width:$mobile) {
+    .orderNav {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:$smallMobile) {
+    .orderNav {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .orderNav {
+        width: 70%;
     }
 }
 
@@ -45,6 +90,17 @@
     flex-direction: column;
 }
 
+@media screen and (max-width:$tablet) {
+    .checkout__form {
+        flex-direction: column;
+    }
+
+    .checkout__formItem {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+
 @mixin fieldStyle {
     background-color: transparent;
     border: none;
@@ -60,11 +116,32 @@
     @include fieldStyle;
 }
 
+.checkout__formField_invalid {
+    border-bottom: 1px solid red;
+}
+
+.errorSign {
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    padding-bottom: 1px;
+    color: red;
+    border: 1px solid red;
+    border-radius: 50%;
+    align-self: flex-end;
+    margin-top: -2.2em;
+    visibility: hidden;
+}
+
 .formField__wrapper {
     height: 3em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.formField__wrapper_hidden {
+    display: none;
 }
 
 .checkbox__wrapper {
@@ -111,9 +188,16 @@
     border: none;
     padding: 0;
     display: grid;
-    grid-template-areas: 'name curname'
+    grid-template-areas: 'name surname'
         'tel .';
-    gap: 10px;
+    gap: 20px;
+}
+
+@media screen and (max-width:$mobile) {
+    .userInfo {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .adress {
@@ -129,19 +213,19 @@
     margin-bottom: 1em;
 }
 
-.custom-radio {
+.customRadio {
     position: absolute;
     z-index: -1;
     opacity: 0;
 }
 
-.custom-radio+label {
+.customRadio+label {
     display: inline-flex;
     align-items: center;
     user-select: none;
 }
 
-.custom-radio+label::before {
+.customRadio+label::before {
     content: '';
     display: inline-block;
     width: 1em;
@@ -156,7 +240,15 @@
     background-size: 50% 50%;
 }
 
-.custom-radio:checked+label::before {
+// .customRadio_invalid+label::before {
+//     content: '!';
+//     color: red;
+//     text-align: center;
+//     padding-bottom: 2px;
+//     border: 1px solid red;
+// }
+
+.customRadio:checked+label::before {
     border-color: $textColor;
     background-color: $textColor;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
@@ -227,8 +319,13 @@
     flex-direction: column;
     align-items: flex-end;
 
-    p {
+    div {
         margin: 5px 0;
+        display: flex;
+
+        p {
+            padding-left: 10px;
+        }
     }
 }
 
@@ -237,6 +334,12 @@
     font-size: 2em;
     font-weight: 700;
     padding: 8px 0;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 1.5em;
+    text-align: right;
 }
 
 .submitButton {
