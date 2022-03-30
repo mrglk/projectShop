@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
@@ -31,13 +32,29 @@ module.exports = {
   output: { //точка выхода , аналог bandle.js из browserify
     path: path.resolve(__dirname, 'dist'), // всегда должен быть абсолютный путь (от корневой папки) в нашем случае npm_webpack - название папки в которой лежит проект path: './dist/' - нет. сейчас вызываем методо path.resolve и передаем ему два параметра __dirname - ссылка на текущую папку, так и пишется и dist - относительный путь до папки в которую будем все сохранять
     filename: '[name].[contenthash].js',
-    assetModuleFilename: 'assets/[hash][ext][query]',
+    assetModuleFilename: 'assets/[name][ext][query]',
     clean: true,
   },
   devtool: 'source-map',
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/img',
+          to: 'img/',
+        },
+        {
+          from: 'src/uploads',
+          to: 'uploads/',
+        },
+        {
+          from: 'src/products.json',
+          to: 'products.json',
+        },
+      ],
     }),
   ].concat(html),
   module: {

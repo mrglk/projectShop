@@ -43,6 +43,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "copy-webpack-plugin": "^10.2.4",
     "normalize-scss": "^7.0.1"
   }
 }
