@@ -1,45 +1,12 @@
 import { getProducts } from "./getProducts";
 
-const buttonJewelry = document.querySelector(".js-filterJewelry");
-const buttonHandbags = document.querySelector(".js-filterHandbags");
-const buttonSweaters = document.querySelector(".js-filterSweaters");
-const buttonEyewear = document.querySelector(".js-filterEyewear");
-const buttonShirts = document.querySelector(".js-filterShirts");
-
 const filterLinks = document.querySelectorAll('.catalogHeader__link');
 
-
-
+export function initCatalog() {
+    
 
 getProducts().then(data => {
-
     renderCardsForCatalog(data);
-
-
-    // buttonJewelry.addEventListener("click", function(event){
-    //     event.preventDefault()
-    //     renderCardsForCatalog(filterCatalog("jewelry", data));
-    // });
-
-    // buttonHandbags.addEventListener("click", function(event){
-    //     event.preventDefault()
-    //     renderCardsForCatalog(filterCatalog("handbags", data));
-    // });
-
-    // buttonSweaters.addEventListener("click", function(event){
-    //     event.preventDefault()
-    //     renderCardsForCatalog(filterCatalog("sweaters", data));
-    // });
-
-    // buttonEyewear.addEventListener("click", function(event){
-    //     event.preventDefault()
-    //     renderCardsForCatalog(filterCatalog("eyewear", data));
-    // });
-
-    // buttonShirts.addEventListener("click", function(event){
-    //     event.preventDefault()
-    //     renderCardsForCatalog(filterCatalog("shirts", data));
-    // });
 
     for (let i = 0; i < filterLinks.length; i++) {
         filterLinks[i].addEventListener("click", function(event){
@@ -47,13 +14,15 @@ getProducts().then(data => {
             renderCardsForCatalog(filterCatalog(filterLinks[i].innerText.toLowerCase(), data));
         });
     };
+
     
 }); 
+
 
 const createCardForCatalog = (item) => {
     return `<div class="catalog__item">
     <div class="catalog__photo">
-        <a href="./product.html" class="catalog__imgLink">
+        <a href="./product.html?id=${item.id}" class="catalog__imgLink">
             <div class="catalog__imgWrapper">
                 <img class="catalog__img" src="../uploads/${item.image}" alt="${item.category}">
             </div>
@@ -61,7 +30,7 @@ const createCardForCatalog = (item) => {
     </div>
     <div class="catalog__footer">
         <div class="catalog__description">
-            <a href="./product.html" class="catalog__link">
+            <a href="./product.html?id=${item.id}" class="catalog__link">
                 <p class="catalog__name">${item.name}</p>
             </a>
             <p class="catalog__price">${item.price}$</p>
@@ -104,6 +73,57 @@ const addBreadcrumbsToCategory = (name) => {
 };
 
 
+
+{/* <div class="product__inner container__row">
+<div class="product__imgWrapper">
+    <img class="product__img" src="../img/product_rings.jpg" alt="Rings">
+</div>
+<div class="product__about">
+    <div class="product__name">
+        <p>7 gold bags lari</p>
+    </div>
+    <div class="product__price">
+        <p>490$</p>
+        </p>
+    </div>
+    <div class="product__size">
+        <span class="product__span">Size:</span>
+        <div class="product__selectWrapper">
+            <div class="product__selectArrow"><img src="../img/arrow.svg"></div>
+            <select class="product__select">
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+            </select>
+        </div>
+    </div>
+    <div class="product__buttons">
+        <button class="product__button">Add to cart</button>
+        <button class="product__button">Buy</button>
+    </div>
+    <div class="product__descriptionWrapper">
+        <span class="product__span">Description:</span>
+        <p class="product__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Nemo iusto, hic expedita
+            veritatis
+            culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore
+            explicabo necessitatibus recusandae aliquam dolorem ex.</p>
+        <p class="product__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Nemo iusto, hic expedita
+            veritatis
+            culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore
+            explicabo necessitatibus recusandae aliquam dolorem ex.</p>
+    </div>
+</div>
+</div> */}
+
+
+
+
+
+
+
 const pagination = (products) => {
     const countOfProducts = products.length;
     const countOnOnePage = 9;
@@ -125,22 +145,10 @@ const pagination = (products) => {
 };
 
 
-
-
-
-{/* <li class="pagination__linkWrapper"><a href="" class="pagination__link"> <img
-                                    class="pagination__arrow" src="../img/arrowBack.svg"></a></li>
-                        <li class="pagination__linkWrapper pagination__linkWrapper_active"><a href=""
-                                class="pagination__link">1</a></li>
-                        <li class="pagination__linkWrapper"><a href="" class="pagination__link">2</a></li>
-                        <li class="pagination__linkWrapper"><a href="" class="pagination__link">3</a></li>
-                        <li class="pagination__linkWrapper"><a href="" class="pagination__link">...</a></li>
-                        <li class="pagination__linkWrapper"><a href="" class="pagination__link">5</a></li>
-                        <li class="pagination__linkWrapper">
-                            <a href="" class="pagination__link"> <img class="pagination__arrow"
-                                    src="../img/arrowNext.svg"></a>
-                        </li> */}
+}
 
 
 
 
+
+                    

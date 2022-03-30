@@ -13,11 +13,11 @@
     width: 100%;
 }
 
-.product__name {
+.product__nameWrapper {
     font-size: 30px;
 }
 
-.product__price {
+.product__priceWrapper {
     margin-top: 15px;
     font-size: 22px;
     font-weight: bold;
@@ -125,11 +125,11 @@
 }
 
 @media screen and (max-width: $tablet) {
-    .product__name {
+    .product__nameWrapper {
         font-size: 25px;
     }
 
-    .product__price {
+    .product__priceWrapper {
         font-size: 20px;
     }
 
