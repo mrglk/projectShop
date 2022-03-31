@@ -102,6 +102,10 @@
     }
 }
 
+.product__selectWrapper_hidden {
+    display: none;
+}
+
 .product__selectWrapper select {
     width: 60px;
     height: 28px;

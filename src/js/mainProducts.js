@@ -27,7 +27,7 @@ function randomCardsForMain(products) {
     const line2 = document.querySelector(".ourFavorites__line2");
     line1.innerHTML = "";
     line2.innerHTML = "";
-    const count = products.length;
+    const count = products.length - 1;
 
     for (let i = 0; i < 2; i++) {
         line1.innerHTML += createCardForMain(products[Math.round(Math.random() * count) + 1]) 

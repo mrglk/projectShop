@@ -28,7 +28,7 @@ function renderProductCard (product) {
     description.innerText = product.description;
 
     if (!product.size) {
-        selectWrapper.classList.add("hidden");
+        selectWrapper.classList.add("product__selectWrapper_hidden");
         oneSize.classList.remove("hidden");
     } else {
         const sizes = product.size;

@@ -1,5 +1,5 @@
 .hidden {
-    display: none !important;
+    display: none;
 }
 
 .catalog {
@@ -37,7 +37,6 @@
 }
 
 .catalogHeader__link_active {
-    // для js
     color: $textColor;
 }
 

@@ -10,7 +10,11 @@ getProducts().then(data => {
     for (let i = 0; i < filterLinks.length; i++) {
         filterLinks[i].addEventListener("click", function(event){
             event.preventDefault()
+            filterLinks.forEach(link => {
+                link.classList.remove("catalogHeader__link_active");
+        });
             renderCardsForCatalog(filterCatalog(filterLinks[i].innerText.toLowerCase(), data));
+            filterLinks[i].classList.add("catalogHeader__link_active");
         });
     };
 
