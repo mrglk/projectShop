@@ -1,0 +1,361 @@
+body,
+html {
+    height: 100%;
+}
+
+.container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+.orderNav {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        text-decoration: none;
+        color: $textColor;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    p {
+        text-decoration: underline;
+    }
+}
+
+@media (min-width: $tablet) and (max-width: $desktop) {
+    .orderNav {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width:$tablet) {
+    .orderNav {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width:$mobile) {
+    .orderNav {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:$smallMobile) {
+    .orderNav {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .orderNav {
+        width: 70%;
+    }
+}
+
+.arrowImg {
+    width: 12px;
+    height: 12px;
+}
+
+.checkout__form {
+    margin: 60px 0;
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+        margin: 30px 0;
+        font-family: $headerFont;
+        font-size: 25px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.checkout__formItem {
+    width: 47%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width:$tablet) {
+    .checkout__form {
+        flex-direction: column;
+    }
+
+    .checkout__formItem {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+
+@mixin fieldStyle {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    &:focus {
+        outline: none;
+        border-bottom: 1px solid $textColor;
+    }
+}
+
+.checkout__formField {
+    @include fieldStyle;
+}
+
+.checkout__formField_invalid {
+    border-bottom: 1px solid red;
+}
+
+.errorSign {
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    padding-bottom: 1px;
+    color: red;
+    border: 1px solid red;
+    border-radius: 50%;
+    align-self: flex-end;
+    margin-top: -2.2em;
+    visibility: hidden;
+}
+
+.formField__wrapper {
+    height: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.formField__wrapper_hidden {
+    display: none;
+}
+
+.checkbox__wrapper {
+    margin: 2em 0;
+}
+
+.checkout__checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.checkout__checkbox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    position: relative;
+}
+
+.checkout__checkbox+label::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: 1px solid $textColor;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+.checkout__checkbox:checked+label::after {
+    content: '';
+    background: $textColor;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 6px;
+}
+
+.userInfo {
+    border: none;
+    padding: 0;
+    display: grid;
+    grid-template-areas: 'name surname'
+        'tel .';
+    gap: 20px;
+}
+
+@media screen and (max-width:$mobile) {
+    .userInfo {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.adress {
+    margin-top: 2em;
+
+    div {
+        margin-bottom: 1em;
+    }
+}
+
+.radio__wrapper {
+    display: inline-block;
+    margin-bottom: 1em;
+}
+
+.customRadio {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.customRadio+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+.customRadio+label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid $textColor;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+// .customRadio_invalid+label::before {
+//     content: '!';
+//     color: red;
+//     text-align: center;
+//     padding-bottom: 2px;
+//     border: 1px solid red;
+// }
+
+.customRadio:checked+label::before {
+    border-color: $textColor;
+    background-color: $textColor;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.orderSummary {
+    display: flex;
+    flex-direction: column;
+}
+
+.orderEdit {
+    width: fit-content;
+    align-self: end;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: $textColor;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.product {
+    width: 95%;
+    margin: auto;
+    padding: 1.5em 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:first-child {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+}
+
+.product__preview {
+    width: 25%;
+}
+
+.discount {
+    display: flex;
+    justify-content: space-between;
+    margin: 4em 0;
+}
+
+.discount__code {
+    @include fieldStyle;
+    width: 85%;
+    padding: 8px 0;
+    font-size: 16px;
+}
+
+.discount__button {
+    font-size: 16px;
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+        border-bottom: 1px solid $textColor;
+        cursor: pointer;
+    }
+}
+
+.costs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    div {
+        margin: 5px 0;
+        display: flex;
+
+        p {
+            padding-left: 10px;
+        }
+    }
+}
+
+.totalCost {
+    font-family: $generalFont;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 8px 0;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 1.5em;
+    text-align: right;
+}
+
+.submitButton {
+    font-size: 16px;
+    font-family: $generalFont;
+    width: 60%;
+    height: 50px;
+    padding: 16px;
+    margin-top: 30px;
+    margin-left: 40%;
+    background-color: $textColor;
+    color: white;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+    }
+}
