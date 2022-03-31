@@ -36,6 +36,10 @@
     font-size: 18px;
 }
 
+.product__oneSize {
+    font-size: 16px;
+}
+
 .product__buttons {
     display: flex;
     gap: 15px;
@@ -90,7 +94,7 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    width: 60px;
+    width: 65px;
     border: 1px solid #050502;
 
     &:hover {
@@ -99,7 +103,7 @@
 }
 
 .product__selectWrapper select {
-    width: 50px;
+    width: 60px;
     height: 28px;
     padding: 0 15px 0 7px;
     background: transparent;
