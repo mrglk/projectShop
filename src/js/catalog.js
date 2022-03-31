@@ -70,24 +70,3 @@ export function addBreadcrumbs(name) {
     <img src="../img/greater.png">
     <span>${name.charAt(0).toUpperCase() + name.slice(1)}</span>`
 };
-
-
-// function pagination(products) {
-//     const countOfProducts = products.length;
-//     const countOnOnePage = 9;
-//     const countOfPages = Math.ceil(countOfProducts / countOnOnePage);
-
-//     const container = document.querySelector(".pagination__inner");
-//     container.innerHTML = "";
-//     let page = "";
-
-//     if (countOfPages < 1) {
-//         return
-//     }
-
-//     for (let i = 1; i < countOfPages + 1; i++) {
-//          page += `<li class="pagination__linkWrapper pagination__linkWrapper_active"><a href=""
-//          class="pagination__link">${i}</a></li>`
-//     }
-//     return container.innerHTML += page;
-// };
