@@ -1,9 +1,21 @@
 import { getProducts } from "./getProducts";
+import { filterCatalog } from "./catalog";
+import { renderCardsForCatalog } from "./catalog";
+import { createCardForCatalog } from "./catalog";
+
+const categoriesLinks = document.querySelectorAll(".categories__link");
 
 export function initProductMain() {
 
 getProducts().then(data => {
-    randomCardsForMain(data)
+    randomCardsForMain(data);
+
+    categoriesLinks.forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+            window.location.href = `catalog.html?group=${link.innerText.toLowerCase()}`;
+        })
+    });
 });
 }
 

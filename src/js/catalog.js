@@ -1,11 +1,21 @@
 import { getProducts } from "./getProducts";
 
 const filterLinks = document.querySelectorAll('.catalogHeader__link');
+const urlGroupName = window.location.search.replace( '?group=', '');
 
 export function initCatalog() {
-
 getProducts().then(data => {
-    renderCardsForCatalog(data);
+
+    if (urlGroupName) {
+        renderCardsForCatalog(filterCatalog(urlGroupName, data));
+                filterLinks.forEach(link => {
+                    if (link.innerHTML.toLowerCase() == urlGroupName) {
+                        link.classList.add("catalogHeader__link_active");
+                    }
+                })
+    } else {
+        renderCardsForCatalog(data)
+    };
 
     for (let i = 0; i < filterLinks.length; i++) {
         filterLinks[i].addEventListener("click", function(event){
@@ -13,16 +23,14 @@ getProducts().then(data => {
             filterLinks.forEach(link => {
                 link.classList.remove("catalogHeader__link_active");
         });
-            renderCardsForCatalog(filterCatalog(filterLinks[i].innerText.toLowerCase(), data));
-            filterLinks[i].classList.add("catalogHeader__link_active");
+        setGetParameter("group", filterLinks[i].innerText.toLowerCase());
+        renderCardsForCatalog(filterCatalog(filterLinks[i].innerText.toLowerCase(), data));
+        filterLinks[i].classList.add("catalogHeader__link_active");
         });
     };
-
-    
 }); }
 
-
-function createCardForCatalog(item) {
+export function createCardForCatalog(item) {
     return `<div class="catalog__item">
     <div class="catalog__photo">
         <a href="./product.html?id=${item.id}" class="catalog__imgLink">
@@ -48,7 +56,7 @@ function createCardForCatalog(item) {
 </div>`;
 };
 
-function renderCardsForCatalog(products) {
+export function renderCardsForCatalog(products) {
     const container = document.querySelector(".catalog__items");
     container.innerHTML = '';
     products.forEach(product => {
@@ -56,7 +64,7 @@ function renderCardsForCatalog(products) {
     })
 };
 
-function filterCatalog(value, products) {
+export function filterCatalog(value, products) {
     addBreadcrumbs(value);
     return products.filter(
         (product) => {
@@ -74,3 +82,9 @@ export function addBreadcrumbs(name) {
     <img src="../img/greater.png">
     <span>${name.charAt(0).toUpperCase() + name.slice(1)}</span>`
 };
+
+function setGetParameter(prmName, val) {
+    const url = new URL(window.location);
+    url.searchParams.set(prmName, val);
+    history.pushState(null, null, url);
+}

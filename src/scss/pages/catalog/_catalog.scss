@@ -32,6 +32,7 @@
 
     &:hover {
         cursor: pointer;
+        transition: color 0.4s ease;
         color: $textColor;
     }
 }
