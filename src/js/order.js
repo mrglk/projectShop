@@ -1,3 +1,4 @@
+export function initOrder() {
 const checkValidity = () => {
     let validForm = Math.min(checkFill("userEmail"), checkPattern('Email'), checkFill("userName"),
         checkFill("userSurname"), checkFill("userPhone"), checkPattern('Phone'), checkFill("userCountry"),
@@ -178,8 +179,9 @@ let sendForm = () => {
         .catch(error => console.log(error));
 };
 
-let submitButton = document.querySelector('.submitButton');
+let submitButton = document.getElementById('.submitButton');
 submitButton.onclick = function (e) {
     e.preventDefault();
     checkValidity();
 };
+}

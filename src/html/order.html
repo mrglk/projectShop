@@ -8,13 +8,13 @@
     <title>Felis – Order</title>
 </head>
 
-<body>
+<body id="order">
     <div class="container">
         <div class="containerBg">
             <header class="header">
                 <nav class="header__inner container__row">
                     <div class="header__links">
-                        <a class="header__links_style" href="">SHOP NOW</a>
+                        <a class="header__links_style" href="catalog.html">SHOP NOW</a>
                         <a class="header__links_style" href="">LOOKBOOK</a>
                     </div>
                     <div class="header__logo">
@@ -22,7 +22,7 @@
                     </div>
                     <div class="header__opportunities">
                         <a class="header__links_style" href="">SEARCH</a>
-                        <a class="header__links_style" href="">CART</a>
+                        <a class="header__links_style" href="basket.html">CART</a>
                         <a class="header__links_style header__links_circle" href="">0</a>
                     </div>
                 </nav>
@@ -31,22 +31,21 @@
             <main class="main">
                 <div class="container__row">
                     <nav class="orderNav">
-                        <a href="../html/index.html">Home page</a>
+                        <a href="index.html">Home page</a>
                         <div class="arrowImg">
                             <img src="../img/greater.png" class="image" alt="">
                         </div>
                         <p>Checkout</p>
                     </nav>
 
-                    <form class="checkout__form" id="form"> 
+                    <form class="checkout__form" id="form">
                         <div class="checkout__formItem">
                             <h3>
                                 Contact information
                             </h3>
                             <div class="formField__wrapper">
-                                <label for="email">Your email address *</label>
-                                <input type="email" class="checkout__formField"
-                                    id="userEmail">
+                                <label for="userEmail">Your email address *</label>
+                                <input type="email" class="checkout__formField" id="userEmail">
                                 <div class="errorSign" id="userEmailError">!</div>
                                 <div class="errorMessageEmail"></div>
                             </div>
@@ -57,8 +56,7 @@
                             <fieldset class="userInfo">
                                 <div class="formField__wrapper">
                                     <label for="userName">Name *</label>
-                                    <input type="text" class="checkout__formField"
-                                        id="userName">
+                                    <input type="text" class="checkout__formField" id="userName">
                                     <div class="errorSign" id="userNameError">!</div>
                                 </div>
                                 <div class="formField__wrapper">
@@ -68,7 +66,8 @@
                                 </div>
                                 <div class="formField__wrapper">
                                     <label for="userPhone">Phone *</label>
-                                    <input type="tel" placeholder = "+7 (999) 999-99-99" class="checkout__formField" id="userPhone">
+                                    <input type="tel" placeholder="+7 (999) 999-99-99" class="checkout__formField"
+                                        id="userPhone">
                                     <div class="errorSign" id="userPhoneError">!</div>
                                     <div class="errorMessagePhone"></div>
                                 </div>
@@ -77,8 +76,7 @@
                                 Delivery
                             </h3>
                             <div class="radio__wrapper">
-                                <input type="radio" name="delivery__radio" id="store"
-                                    class="customRadio" checked>
+                                <input type="radio" name="delivery__radio" id="store" class="customRadio" checked>
                                 <label for="store">Free collect from store</label>
                             </div>
                             <div class="radio__wrapper">
@@ -114,6 +112,18 @@
                                     <div class="errorSign" id="userAdressError">!</div>
                                 </div>
                             </div>
+
+                            <!-- <div class="container__modal">
+                                <div class="modal">
+                                    <div class="map">
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad ipsum amet dolorum
+                                        voluptas qui nihil corporis atque perspiciatis fuga ducimus aut, placeat vero id
+                                        nostrum? Temporibus veritatis illo blanditiis reiciendis.
+                                    </div>
+                                    <button type="button" class="submitButton" id="chooseButton">Choose pick-up point</button>
+                                </div>
+                            </div> -->
+
                             <h3>
                                 Payment method
                             </h3>
@@ -131,15 +141,15 @@
                             <div class="orderSummary">
                                 <a href="../html/basket.html" class="orderEdit">Edit order</a>
                                 <div class="purchasesList">
-                                    <div class="product">
-                                        <div class="product__preview">
+                                    <div class="purchase">
+                                        <div class="purchase__preview">
                                             <img src="../img/product_rings.jpg" alt="" class="image">
                                         </div>
-                                        <div class="product__describtion">
+                                        <div class="purchase__describtion">
                                             <p class="describtionText">7 gold bags lari</p>
                                             <p class="size">Size: 15</p>
                                         </div>
-                                        <div class="product__price">490$</div>
+                                        <div class="purchase__price">490$</div>
                                     </div>
                                 </div>
 
@@ -149,21 +159,21 @@
                                 </div>
 
                                 <div class="costs">
-                                    <div class="subtotalCost">Subtotal: 
+                                    <div class="subtotalCost">Subtotal:
                                         <p>0$</p>
                                     </div>
-                                    <div class="deliveryCost">Shipping: 
+                                    <div class="deliveryCost">Shipping:
                                         <p>0$</p>
                                     </div>
-                                    <div class="discountCost">Discount: 
+                                    <div class="discountCost">Discount:
                                         <p>0$</p>
                                     </div>
-                                    <div class="totalCost">Total: 
+                                    <div class="totalCost">Total:
                                         <p>0$</p>
                                     </div>
                                 </div>
                                 <p class="errorMessage"></p>
-                                <button type="submit" class="submitButton">Order</button>
+                                <button type="submit" class="submitButton" id="submitButton">Order</button>
                             </div>
                         </div>
                     </form>

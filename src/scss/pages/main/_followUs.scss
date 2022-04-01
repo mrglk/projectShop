@@ -10,6 +10,9 @@
 
 .followUs__photo {
     max-width: 423px;
-    // height: 581px;
-    margin-left: 20px;
+    margin-right: 20px;
+
+    &:last-child {
+        margin-right: 0;
+    }
 }
