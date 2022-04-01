@@ -1,6 +1,6 @@
 const checkValidity = () => {
-    let validForm = Math.min(checkFill("userEmail"), isEmail(), checkFill("userName"),
-        checkFill("userSurname"), checkFill("userPhone"), isPhone(), checkFill("userCountry"),
+    let validForm = Math.min(checkFill("userEmail"), checkPattern('Email'), checkFill("userName"),
+        checkFill("userSurname"), checkFill("userPhone"), checkPattern('Phone'), checkFill("userCountry"),
         checkFill("userCity"), checkFill("userAdress"));
 
     let message = document.querySelector('.errorMessage');
@@ -34,27 +34,21 @@ const checkFill = (id) => {
 
     }
     return true;
-}
-
-const isEmail = () => {
-    let email = document.getElementById('userEmail');
-    let pattern = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(email.value);
-    if (/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(email.value) == true) {
-        return true;
-    } else if (!email.classList.contains('checkout__formField_invalid')) {
-        email.classList.add('checkout__formField_invalid');
-        document.getElementById('userEmailError').style.visibility = 'visible';
-    }
-    return false;
 };
 
-const isPhone = () => {
-    let phone = document.getElementById('userPhone');
-    if (/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(phone.value) == true) {
+const checkPattern = (id) => {
+    let element = document.getElementById('user' + id);
+    let message = document.querySelector('.errorMessage' + id);
+    message.innerHTML = '';
+    let pattern = (id == 'Email') ? /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i :
+        /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+
+    if (pattern.test(element.value) == true) {
         return true;
-    } else if (!phone.classList.contains('checkout__formField_invalid')) {
-        phone.classList.add('checkout__formField_invalid');
-        document.getElementById('userPhoneError').style.visibility = 'visible';
+    } else if (!element.classList.contains('checkout__formField_invalid')) {
+        element.classList.add('checkout__formField_invalid');
+        document.getElementById('user' + id + 'Error').style.visibility = 'visible';
+        message.innerHTML = id + " doesn't match required format";
     }
     return false;
 };
@@ -105,6 +99,62 @@ inputPhone.addEventListener("input", (e) => {
     }
     inputPhone.value = result;
 });
+
+const setVisibility = (visibility, availability) => {
+    let country = document.getElementById('userCountry');
+    let city = document.getElementById('userCity');
+    let adress = document.getElementById('userAdress');
+    country.value = "";
+
+    const checkVisibility = (element) => {
+        if (visibility == true) {
+            element.parentElement.classList.remove('formField__wrapper_hidden');
+        } else {
+            element.parentElement.classList.add('formField__wrapper_hidden');
+        }
+    }
+
+    checkVisibility(country);
+    checkVisibility(city);
+    checkVisibility(adress);
+
+    if (availability == true) {
+        country.disabled = false;
+    } else {
+        country.value = "Russia";
+        country.disabled = true;
+    }
+}
+
+document.getElementById('international').addEventListener('change', (event) => {
+    setVisibility(true, true);
+});
+
+document.getElementById('standard').addEventListener('change', (event) => {
+    setVisibility(true, false);
+});
+
+document.getElementById('courier').addEventListener('change', (event) => {
+    setVisibility(true, false);
+});
+
+document.getElementById('pick-up').addEventListener('change', (event) => {
+    setVisibility(true, false);
+});
+
+document.getElementById('store').addEventListener('change', (event) => {
+    setVisibility(false, false);
+});
+
+
+
+
+
+
+
+
+
+
 
 let sendForm = () => {
     let json = {
