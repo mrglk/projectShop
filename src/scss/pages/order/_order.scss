@@ -148,6 +148,11 @@ html {
     margin: 2em 0;
 }
 
+.errorMessageEmail,
+.errorMessagePhone {
+    color: red;
+}
+
 .checkout__checkbox {
     position: absolute;
     z-index: -1;
