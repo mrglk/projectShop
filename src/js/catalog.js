@@ -1,26 +1,26 @@
-import { getProducts } from "./getProducts";
+import {
+    getProducts
+} from "./getProducts";
 
 const filterLinks = document.querySelectorAll('.catalogHeader__link');
 
 export function initCatalog() {
 
-getProducts().then(data => {
-    renderCardsForCatalog(data);
+    return getProducts().then(data => {
+        renderCardsForCatalog(data);
 
-    for (let i = 0; i < filterLinks.length; i++) {
-        filterLinks[i].addEventListener("click", function(event){
-            event.preventDefault()
-            filterLinks.forEach(link => {
-                link.classList.remove("catalogHeader__link_active");
-        });
-            renderCardsForCatalog(filterCatalog(filterLinks[i].innerText.toLowerCase(), data));
-            filterLinks[i].classList.add("catalogHeader__link_active");
-        });
-    };
-
-    
-}); }
-
+        for (let i = 0; i < filterLinks.length; i++) {
+            filterLinks[i].addEventListener("click", function (event) {
+                event.preventDefault()
+                filterLinks.forEach(link => {
+                    link.classList.remove("catalogHeader__link_active");
+                });
+                renderCardsForCatalog(filterCatalog(filterLinks[i].innerText.toLowerCase(), data));
+                filterLinks[i].classList.add("catalogHeader__link_active");
+            });
+        };
+    });
+}
 
 function createCardForCatalog(item) {
     return `<div class="catalog__item">
@@ -41,7 +41,7 @@ function createCardForCatalog(item) {
         <div class="catalog__basketWrapper hidden">
             <div class="catalog__basket">
             <img class="catalog__icon" src="../img/bag.svg" alt="Cart">
-                <a href="" class="catalog__basketLink">Add to cart</a>
+                <a class="catalog__basketLink">Add to cart</a>
             </div>
         </div>
     </div>

@@ -16,13 +16,17 @@
 }
 
 .pageContent {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 250px;
     margin-top: 47px;
     margin-bottom: 48px;
-    padding: 0 20px;
+}
+
+.basketContentHide {
+    display: none;
 }
 
 .cartSummary {
@@ -71,7 +75,7 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     background: none;
     font-size: 16px;
-    padding: 8px 0;
+    padding: 8px 4px;
 }
 
 .cartSummary__promo_btn {
@@ -166,9 +170,89 @@
     visibility: hidden;
 }
 
+.newCheckboxBefore::before {
+    background-color: #F1EAE4;
+}
+
 .cartSummary__check>label>input:checked+.newCheckbox::before {
     opacity: 1;
     visibility: visible;
+}
+
+#basketContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.productContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.productImg {
+    width: 20%;
+}
+
+.productAbout {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 24px;
+}
+
+.productName {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.productName p {
+    font-size: 20px;
+}
+
+.productDelete {
+    font-size: 14px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.productSize span {
+    font-size: 18px;
+}
+
+.productCount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.productCountBt {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 22px;
+}
+
+.countBt {
+    font-size: 20px;
+    border: none;
+    padding: 10px
+}
+
+.fontResultMul {
+    font-size: 20px;
+}
+
+.hiddenContent {
+    display: none;
 }
 
 @media screen and (max-width:600px) {

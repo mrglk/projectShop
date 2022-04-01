@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Felis – Catalog</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -13,23 +14,31 @@
         <header class="header container">
             <nav class="header__inner container__row">
                 <div class="header__links">
-                    <a class="header__links_style" href="">SHOP NOW</a>
+                    <a class="header__links_style" href="catalog.html">SHOP NOW</a>
                     <a class="header__links_style" href="">LOOKBOOK</a>
                 </div>
                 <div class="header__logo">
                     <img src="../img/logo.svg" alt="logo">
                 </div>
                 <div class="header__opportunities">
-                    <a class="header__links_style" href="">SEARCH</a>
-                    <a class="header__links_style" href="basket.html">CART</a>
-                    <a class="header__links_style header__links_circle" href="basket.html">0</a>
+                    <a class="header__links_style header__opportunities_search" id="searchBtn">SEARCH</a>
+                    <form method="get" action="search.html" class="header__search">
+                        <input name="search" type="text" class="header__searchInput" id="searchInput"
+                            placeholder="Search...">
+                        <span class="header__searchBtnWrap">
+                            <button class="header__searchBtn" type="submit">
+                                <i class='bx bx-search'></i>
+                            </button>
+                        </span>
+                    </form>
+                    <a class="header__links_style header__opportunities_cart" href="basket.html">CART</a>
+                    <a class="header__links_style header__links_circle" id="countCart" href="basket.html">0</a>
                 </div>
                 <div class="header__burgerMenu">
                     <div id="header__sidenavId" class="header__sidenav">
                         <a href="javascript:void(0)" class="header__closeBtn">&times;</a>
-                        <a href="#" class="header__link">SHOP NOW</a>
+                        <a href="catalog.html" class="header__link">SHOP NOW</a>
                         <a href="#" class="header__link">LOOKBOOK</a>
-                        <a href="#" class="header__link">SEARCH</a>
                         <a href="basket.html" class="header__link">CART</a>
                     </div>
                     <span id="header__openBtn">&#9776;</span>
@@ -78,6 +87,53 @@
                                 </div>
                                 <div class="catalog__basketWrapper hidden">
                                     <div class="catalog__basket">
+                                        <a class="catalog__basketLink">Add to cart</a>
+                                        <img class="catalog__icon" src="../img/bag.svg" alt="Cart">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog__item">
+                            <div class="catalog__photo">
+                                <a href="" class="catalog__imgLink">
+                                    <div class="catalog__imgWrapper">
+                                        <img class="catalog__img" src="../img/product_rings.jpg" alt="Rings">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="catalog__footer">
+                                <div class="catalog__description">
+                                    <a href="" class="catalog__link">
+                                        <p class="catalog__name">white shirt dali</p>
+                                    </a>
+                                    <p class="catalog__price">490$</p>
+                                </div>
+                                <div class="catalog__basketWrapper hidden">
+                                    <div class="catalog__basket">
+                                        <a href="" class="catalog__basketLink">Add to cart</a>
+                                        <img class="catalog__icon" src="../img/bag.svg" alt="Cart">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog__item">
+                            <div class="catalog__photo">
+                                <a href="" class="catalog__imgLink">
+                                    <div class="catalog__imgWrapper">
+                                        <img class="catalog__img" src="../img/product_rings.jpg" alt="Rings">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="catalog__footer">
+                                <div class="catalog__description">
+                                    <a href="" class="catalog__link">
+                                        <p class="catalog__name">7 gold bags lari</p>
+                                    </a>
+                                    <p class="catalog__price">490$</p>
+                                </div>
+                                <div class="catalog__basketWrapper hidden">
+                                    <div class="catalog__basket">
+                                        <a href="" class="catalog__basketLink">Add to cart</a>
                                         <img class="catalog__icon" src="../img/bag.svg" alt="Cart">
                                         <a href="" class="catalog__basketLink">Add to cart</a>
                                     </div>
