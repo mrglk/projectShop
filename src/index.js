@@ -1,6 +1,7 @@
 import "./scss/index.scss";
 import "./js/burger.js";
 import "./js/search.js";
+import "./js/order.js";
 
 import { initCatalog } from "./js/catalog";
 import { initProductPage } from "./js/product";
