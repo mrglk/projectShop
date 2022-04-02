@@ -105,6 +105,7 @@ html {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
 
     &:focus {
         outline: none;
@@ -129,8 +130,23 @@ html {
     border: 1px solid red;
     border-radius: 50%;
     align-self: flex-end;
-    margin-top: -2.2em;
+    margin-top: -1.8em;
     visibility: hidden;
+}
+
+#userEmailError, 
+#userPhoneError,
+#userCountryError,
+#userCityError,
+#userAddressError {
+    margin-top: -1.4em;
+}
+
+.errorMessageEmail,
+.errorMessagePhone {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    font-size: small;
 }
 
 .formField__wrapper {
@@ -205,7 +221,7 @@ html {
     }
 }
 
-.adress {
+.address {
     div {
         margin-top: 1em;
     }
@@ -389,4 +405,22 @@ html {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     padding: 30px 50px;
     width: 85%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orderSuccess {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#successButton {
+    height: auto;
+    padding: 16px;
+    margin-top: 30px;
+    margin-left: 0;
 }
