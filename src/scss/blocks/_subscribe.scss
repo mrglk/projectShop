@@ -36,7 +36,7 @@
 .subscribe__form {
     border-bottom: 1px solid $textColor;
     width: 55%;
-    margin: 149px auto;
+    margin: 149px auto 0 auto;
     display: flex;
     justify-content: space-between;
 }
@@ -55,6 +55,8 @@
 
 .subscribe__formField {
     @include formTextStyle;
+    width: 70%;
+
 
     &:focus {
         outline: none;
@@ -77,4 +79,11 @@
 
 .arrow {
     width: 27px;
+}
+
+.subscribe__message {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 149px;
+    font-size: large;
 }
