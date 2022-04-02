@@ -14,10 +14,15 @@ export function goodsInBasket() {
     products.forEach(product => {
         let iconCart = product.querySelector(".catalog__basketLink");
         let cardName = product.querySelector(".catalog__name").innerHTML;
+        let completeGoods = new Object();
 
         iconCart.addEventListener("click", (e) => {
             e.preventDefault();
-            productCards.set(cardName, 1);
+            completeGoods = {
+                size: "select size",
+                numb: 1
+            }
+            productCards.set(cardName, completeGoods);
             console.log(productCards);
             localStorage.setItem("cart", JSON.stringify(Array.from(productCards.entries())));
             document.getElementById("countCart").innerHTML = productCards.size;
