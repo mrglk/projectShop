@@ -2,9 +2,6 @@ import {
     getProducts
 } from "./getProducts";
 
-// 1. подсвечивание только цифры
-// 2. скрывать пагинацию при переходе на категорию либо когда меньше 9
-
 const filterLinks = document.querySelectorAll('.catalogHeader__link');
 const urlGroupName = window.location.search.replace( '?group=', '');
 const pagination = document.querySelector(".js-pagination");
@@ -18,35 +15,11 @@ getProducts().then(data => {
     let currentPage = 1;
     let offset = 0;
 
-    initPagination(totalProducts, totalPages, productsPerPage) 
-// если продуктов больше 9, показываем пагинацию. засунуть в новую функцию
-
-//     if (totalProducts > productsPerPage) {
-//         const arrowBack = `<li class="pagination__link js-pagi-back"><img class="pagination__arrow js-pagi-back"
-//         src="../img/arrowBack.svg">`;
-//         const arrowNext = ` <li class="pagination__link js-pagi-next">
-//         <img class="pagination__arrow" src="../img/arrowNext.svg">
-//     </li>`;
-//     let newLinks = "";
-
-//     for (let i = 1; i <= totalPages; i++) {
-//         newLinks += `<li class="pagination__link js-pagi-number">${i}</li>`;
-//     }
-
-//     pagination.innerHTML += arrowBack;
-//     pagination.innerHTML += newLinks;
-//     pagination.innerHTML += arrowNext;
-
-// } else {
-//     pagination.classList.add("pagination__inner_hidden");
-// }
-
-const paginationLink = document.querySelectorAll(".pagination__link");
-//отрисовка товаров
+    initPagination(totalProducts, totalPages, productsPerPage);
 
     if (urlGroupName) {
-        // pagination.classList.toggle("pagination__inner_hidden", filterCatalog(urlGroupName, data).length <= productsPerPage); // хуйня
-        renderCardsForCatalog(filterCatalog(urlGroupName, data));
+        pagination.innerHTML = "";
+        renderCardsForCatalog(filterCatalog(urlGroupName, data).slice(offset, offset + 9));
                 filterLinks.forEach(link => {
                     link.classList.toggle("catalogHeader__link_active", link.innerHTML.toLowerCase() == urlGroupName);
                 })               
@@ -57,27 +30,26 @@ const paginationLink = document.querySelectorAll(".pagination__link");
 // фильтрация по категориям 
     for (let i = 0; i < filterLinks.length; i++) {
         filterLinks[i].addEventListener("click", function(event){
-            initPagination(totalProducts, totalPages, productsPerPage) // тотал продактс изменить 
             event.preventDefault()
             filterLinks.forEach(link => {
                 link.classList.remove("catalogHeader__link_active");
         });
+        let selectCategory = filterCatalog(filterLinks[i].innerText.toLowerCase(), data);
+        initPagination(selectCategory.length, Math.ceil(selectCategory.length / productsPerPage), productsPerPage)
         setGetParameter("group", filterLinks[i].innerText.toLowerCase());
-        renderCardsForCatalog(filterCatalog(filterLinks[i].innerText.toLowerCase(), data));
+        renderCardsForCatalog(selectCategory);
         filterLinks[i].classList.add("catalogHeader__link_active");
         });
     };
 
     pagination.addEventListener("click", function(e) {
-       const element = e.target;
-  
-       if(element.classList.contains("js-pagi-number")) {
+        const element = e.target;
+        
+        if(element.classList.contains("js-pagi-number")) {
         const newPage = Number(element.innerText)
         setPage(newPage)
-        
-       }
-
-       if (element.classList.contains('js-pagi-next')) {
+    }
+    if (element.classList.contains('js-pagi-next')) {
         element.classList.remove("pagination__link__disabled")
         if (currentPage == totalPages ) {
             element.classList.add("pagination__link__disabled")
@@ -85,7 +57,6 @@ const paginationLink = document.querySelectorAll(".pagination__link");
             setPage(currentPage + 1)
         }
     }
-        
         if (element.classList.contains('js-pagi-back')) {
             element.classList.remove("pagination__link__disabled")
             if (currentPage == 1) {
@@ -93,7 +64,6 @@ const paginationLink = document.querySelectorAll(".pagination__link");
             } else {
                 setPage(currentPage - 1)
             }
-    
         }
     })
 
@@ -106,15 +76,13 @@ const paginationLink = document.querySelectorAll(".pagination__link");
             behavior: 'smooth',
           });
         setActivePageClass(currentPage);
-
     }
 
     function setActivePageClass(page) {
         const paginationLink = document.querySelectorAll(".pagination__link");
         paginationLink.forEach(link => {
-            console.log(123)
             link.classList.toggle("pagination__link_active", link.innerText == page);
-        })
+        });
     }
     
 
@@ -194,15 +162,19 @@ function initPagination(totalProd, totalPag, prodPerPage) {
     for (let i = 1; i <= totalPag; i++) {
         newLinks += `<li class="pagination__link js-pagi-number">${i}</li>`;
     }
-
     pagination.innerHTML += arrowBack;
     pagination.innerHTML += newLinks;
     pagination.innerHTML += arrowNext;
 
+    const paginationLink = document.querySelectorAll(".pagination__link");
+    paginationLink.forEach(link => {
+        console.log(link.innerText)
+        link.classList.toggle("pagination__link_active", link.innerText == 1);
+    });
+
 } else {
     pagination.classList.add("pagination__inner_hidden");
 }
-    
 }
 
 
