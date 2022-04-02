@@ -1,3 +1,7 @@
+import {
+    getProducts
+} from "./getProducts";
+
 export function initOrder() {
     const checkValidity = () => {
         let validForm = Math.min(checkFill("userEmail"), checkPattern('Email'), checkFill("userName"),
@@ -9,7 +13,7 @@ export function initOrder() {
             sendForm();
             document.getElementById('form').reset();
             message.innerHTML = '';
-            // добавить окно "заказ оформлен успешно"
+            document.querySelector('.container__modal').classList.add('container__modal_visible');
         } else {
             message.innerHTML = 'Please provide all required information';
         }
@@ -133,20 +137,24 @@ export function initOrder() {
 
     document.getElementById('international').addEventListener('change', (event) => {
         setVisibility(true, true);
+        calcCost(20);
     });
 
     document.getElementById('standard').addEventListener('change', (event) => {
         setVisibility(true, false);
+        calcCost(10);
     });
 
     document.getElementById('courier').addEventListener('change', (event) => {
         setVisibility(true, false);
+        calcCost(20);
     });
 
     let widjetIsLoad = false;
 
     document.getElementById('pick-up').addEventListener('change', (event) => {
         setVisibility(true, false);
+        calcCost(10);
         if (!widjetIsLoad) {
             window.JCShiptorWidgetPvz.init();
             widjetIsLoad = !widjetIsLoad;
@@ -157,6 +165,7 @@ export function initOrder() {
 
     document.getElementById('store').addEventListener('change', (event) => {
         setVisibility(false, false);
+        calcCost(0);
     });
 
     let elemShiptorWidget = document.querySelector("#shiptor_widget_pvz");
@@ -171,7 +180,102 @@ export function initOrder() {
         setAddress("userAddress", ce.detail.address);
     });
 
+    const createPurchaseList = (goods) => {
+        console.log(goods);
+        let productCardsString = localStorage.getItem("cart");
 
+        if (productCardsString == null) {
+            return;
+        }
+        let productCards = JSON.parse(productCardsString);
+        console.log(productCards);
+
+        let purchasesList = document.querySelector('.purchasesList');
+        let subtotal = 0;
+
+        productCards.forEach(element => {
+
+            let name = element[0];
+            let size = element[1].size;
+            let numb = element[1].numb;
+            let price;
+            let image;
+
+            goods.forEach(item => {
+                if (item.name == name) {
+                    price = item.price;
+                    image = item.image;
+                }
+            });
+
+            let purchase = document.createElement('div');
+            purchase.classList.add('purchase');
+            purchasesList.append(purchase);
+
+            let purchasePreview = document.createElement('div');
+            purchasePreview.classList.add('purchase__preview');
+            purchase.append(purchasePreview);
+
+            let purchaseImage = document.createElement('img');
+            purchaseImage.classList.add('image');
+            purchaseImage.src = image;
+            purchasePreview.append(purchaseImage);
+
+            let purchaseDescribtion = document.createElement('div');
+            purchaseDescribtion.classList.add('purchase__describtion');
+            purchase.append(purchaseDescribtion);
+
+            let describtionText = document.createElement('p');
+            describtionText.classList.add('describtionText');
+            describtionText.innerHTML = name;
+            purchaseDescribtion.append(describtionText);
+
+            let describtionSize = document.createElement('p');
+            describtionText.classList.add('size');
+            describtionSize.innerHTML = size;
+            purchaseDescribtion.append(describtionSize);
+
+            let purchasePrice = document.createElement('div');
+            purchasePrice.classList.add('purchase__price');
+            purchasePrice.innerHTML = price * numb + "$";
+            subtotal += price * numb;
+            purchase.append(purchasePrice);
+
+        });
+
+        console.log(subtotal);
+        document.getElementById('subtotal').innerHTML = subtotal;
+        document.getElementById('total').innerHTML = subtotal;
+
+    };
+
+    const calcCost = (delivery) => {
+        let subtotal = document.getElementById('subtotal').innerHTML;
+        let discount = document.getElementById('discount').innerHTML;
+        document.getElementById('delivery').innerHTML = delivery;
+
+        let total = document.getElementById('total');
+        console.log('subtotal=' + subtotal + " discount = " + discount + " delivery=" + delivery);
+        total.innerHTML = (+subtotal - +discount + +delivery);
+    }
+
+    document.querySelector('.discount__button').onclick = function (e) {
+        e.preventDefault();
+        let discountValue = document.querySelector('.discount__code').value;
+        let total = document.getElementById('total').innerHTML;
+        let discount = document.getElementById('discount');
+        if (discountValue == "minus10" && discount.innerHTML == "") {
+            document.getElementById('total').innerHTML = total * 0.9;
+            discount.innerHTML = total * 0.1;
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+        getProducts().then((goods) => {
+            createPurchaseList(goods);
+        })
+        window._shiptorWidget.load();
+    });
 
     let sendForm = () => {
         let json = {
@@ -201,7 +305,9 @@ export function initOrder() {
         checkValidity();
     };
 
-    //document.addEventListener("DOMContentLoader", function () {
-        window._shiptorWidget.load();
-    //});
+    const closeModal = document.getElementById('successButton');
+    closeModal.addEventListener('click', () => {
+        document.querySelector('.container__modal').classList.remove('container__modal_visible');
+        localStorage.removeItem('cart');
+    });
 }
