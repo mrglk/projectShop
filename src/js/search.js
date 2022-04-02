@@ -5,30 +5,6 @@ elem.onclick = function (e) {
 
         search.classList.toggle("show");
     }
-
-    <<
-    << << < HEAD
-    // let json =
-    //     `[{
-    //         "img":"544b0d4e05e6250aeba2.jpg",
-    //         "name":"7 gold bags lari",
-    //         "count":"490$"
-    //     },
-    //     {
-    //         "img":"20f1b88aa53b93b4a4ce.jpg",
-    //         "name":"white shirt dali",
-    //         "count":"399$"
-    //     },
-    //     {
-    //         "img":"4f70550e567e890d0aeb.jpg",
-    //         "name":"shitra handbag",
-    //         "count":"299$"
-    //     }
-    // ]`;
-
-    ===
-    === = >>>
-    >>> > ad82cae(added header, banner, footer, basket)
 import {
     getProducts
 } from "./getProducts";
