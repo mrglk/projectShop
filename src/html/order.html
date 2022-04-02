@@ -149,19 +149,8 @@
 
                         <div class="checkout__formItem">
                             <div class="orderSummary">
-                                <a href="../html/basket.html" class="orderEdit">Edit order</a>
-                                <div class="purchasesList">
-                                    <div class="purchase">
-                                        <div class="purchase__preview">
-                                            <img src="../img/product_rings.jpg" alt="" class="image">
-                                        </div>
-                                        <div class="purchase__describtion">
-                                            <p class="describtionText">7 gold bags lari</p>
-                                            <p class="size">Size: 15</p>
-                                        </div>
-                                        <div class="purchase__price">490$</div>
-                                    </div>
-                                </div>
+                                <a href="basket.html" class="orderEdit">Edit order</a>
+                                <div class="purchasesList"></div>
 
                                 <div class="discount">
                                     <input type="text" placeholder="promo code" class="discount__code">
@@ -170,16 +159,16 @@
 
                                 <div class="costs">
                                     <div class="subtotalCost">Subtotal:
-                                        <p>0$</p>
+                                        <p id="subtotal"></p> <span>$</span>
                                     </div>
                                     <div class="deliveryCost">Shipping:
-                                        <p>0$</p>
+                                        <p id="delivery"></p> <span>$</span>
                                     </div>
                                     <div class="discountCost">Discount:
-                                        <p>0$</p>
+                                        <p id="discount"></p> <span>$</span>
                                     </div>
                                     <div class="totalCost">Total:
-                                        <p>0$</p>
+                                        <p id="total"></p> <span>$</span>
                                     </div>
                                 </div>
                                 <p class="errorMessage"></p>
@@ -192,7 +181,7 @@
                             <div class="orderSuccess">
                                 <h2> Thank you! </h2>
                                 <h3>Your order is successfully placed!</h3>
-                                <button type="button" class="submitButton" id="successButton">Continue shopping</button>
+                                <a href="index.html" class="submitButton" id="successButton">Continue shopping</a>
                             </div>
                         </div>
                     </div>
