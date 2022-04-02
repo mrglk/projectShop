@@ -27,7 +27,6 @@ getProducts().then(data => {
         renderCardsForCatalog(data.slice(offset, offset + 9))
     };
 
-// фильтрация по категориям 
     for (let i = 0; i < filterLinks.length; i++) {
         filterLinks[i].addEventListener("click", function(event){
             event.preventDefault()
@@ -74,7 +73,7 @@ getProducts().then(data => {
         window.scrollTo({
             top: document.querySelector(".catalogHeader").offsetTop,
             behavior: 'smooth',
-          });
+        });
         setActivePageClass(currentPage);
     }
 

@@ -30,7 +30,6 @@ function createCardForMain(item) {
 </div>`;
 };
 
-
 function randomCardsForMain(products) {
     const line1 = document.querySelector(".ourFavorites__line1");
     const line2 = document.querySelector(".ourFavorites__line2");
