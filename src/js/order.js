@@ -1,4 +1,3 @@
-export function initOrder() {
 const checkValidity = () => {
     let validForm = Math.min(checkFill("userEmail"), checkPattern('Email'), checkFill("userName"),
         checkFill("userSurname"), checkFill("userPhone"), checkPattern('Phone'), checkFill("userCountry"),
@@ -125,6 +124,10 @@ const setVisibility = (visibility, availability) => {
         country.value = "Russia";
         country.disabled = true;
     }
+
+    let pickUp = document.getElementById("pick-up");
+    city.disabled = pickUp.checked;
+    adress.disabled = pickUp.checked;
 }
 
 document.getElementById('international').addEventListener('change', (event) => {
@@ -139,21 +142,33 @@ document.getElementById('courier').addEventListener('change', (event) => {
     setVisibility(true, false);
 });
 
+let widjetIsLoad = false;
+
 document.getElementById('pick-up').addEventListener('change', (event) => {
     setVisibility(true, false);
+    if (!widjetIsLoad) {
+        window.JCShiptorWidgetPvz.init();
+        widjetIsLoad = !widjetIsLoad;
+    } else {
+        window.JCShiptorWidgetPvz.show();
+    }
 });
 
 document.getElementById('store').addEventListener('change', (event) => {
     setVisibility(false, false);
 });
 
+let elemShiptorWidget = document.querySelector("#shiptor_widget_pvz");
+elemShiptorWidget.addEventListener("onPvzSelect", function (ce) {
+    console.log(ce.detail);
 
-
-
-
-
-
-
+    const setAdress = (id, value) => {
+        let element = document.getElementById(id);
+        element.value = value;
+    }
+    setAdress("userCity",ce.detail.prepare_address.administrative_area);
+    setAdress("userAdress", ce.detail.address);
+});
 
 
 
@@ -179,9 +194,12 @@ let sendForm = () => {
         .catch(error => console.log(error));
 };
 
-let submitButton = document.getElementById('.submitButton');
+let submitButton = document.getElementById('submitButton');
 submitButton.onclick = function (e) {
     e.preventDefault();
     checkValidity();
 };
-}
+
+document.addEventListener("DOMContentLoader", function () {
+    window._shiptorWidget.load();
+});
