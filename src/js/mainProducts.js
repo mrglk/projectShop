@@ -1,7 +1,4 @@
 import { getProducts } from "./getProducts";
-import { filterCatalog } from "./catalog";
-import { renderCardsForCatalog } from "./catalog";
-import { createCardForCatalog } from "./catalog";
 
 const categoriesLinks = document.querySelectorAll(".categories__link");
 
@@ -42,8 +39,8 @@ function randomCardsForMain(products) {
     const count = products.length - 1;
 
     for (let i = 0; i < 2; i++) {
-        line1.innerHTML += createCardForMain(products[Math.round(Math.random() * count) + 1]) 
+        line1.innerHTML += createCardForMain(products[Math.round(Math.random() * count) + 1])
     }
 
-    line2.innerHTML = createCardForMain(products[Math.round(Math.random() * count) + 1]) 
+    line2.innerHTML = createCardForMain(products[Math.round(Math.random() * count) + 1])
 };

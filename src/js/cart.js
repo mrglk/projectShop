@@ -22,12 +22,18 @@ function createBasket(goods) {
     document.getElementById("countCart").innerHTML = productCards.size;
 
     products.forEach(product => {
-        let iconCart = product.querySelector(".catalog__basketLink");
+        let iconCart = product.querySelector(".js-catalogBasket");
         let cardName = product.querySelector(".catalog__name").innerHTML;
+        let completeGoods = new Object();
+
 
         iconCart.addEventListener("click", (e) => {
             e.preventDefault();
-            productCards.set(cardName, 1);
+            completeGoods = {
+                size: "select size",
+                numb: 1
+            }
+            productCards.set(cardName, completeGoods);
             console.log(productCards);
             localStorage.setItem("cart", JSON.stringify(Array.from(productCards.entries())));
             document.getElementById("countCart").innerHTML = productCards.size;
@@ -52,24 +58,23 @@ function createBasket(goods) {
                         <a href="./product.html?id=${item.id}" class="catalog__link">
                             <p class="catalog__name">${item.name}</p>
                         </a>
-                        <div class="productDelete">удалить</div>
+                        <div class="productDelete">delete</div>
                     </div>
-                    <div class="productSize">
-                        <span>${productCards.get(item.name)}</span>
+                    <div class="productSize">Size:<span>${productCards.get(item.name).size}</span>
                     </div>
                     <div class="productCount">
                         <div class="productCountBt">
                             <button class="buttonCountMinus countBt">-</button>
-                            <div class="buttonCountNumber">1</div>
+                            <div class="buttonCountNumber">${productCards.get(item.name).numb}</div>
                             <button class="buttonCountPlus countBt">+</button>
                         </div>
                         <div class="hiddenContent"><span class="hiddenPrice">${item.price}</span>$</div>
-                        <div class="fontResultMul"><span class="resultMul">${item.price}</span>$</div>
+                        <div class="fontResultMul"><span class="resultMul">${item.price*productCards.get(item.name).numb}</span>$</div>
                         </div>
                     </div>
                 </div>
             </div><br>`
-            document.querySelector(".pageContent").classList.add("basketContentHide");
+            document.querySelector(".pageContentCart").classList.add("basketContentHide");
         }
     }
 
@@ -86,6 +91,7 @@ function createBasket(goods) {
         let countElem = container.querySelector(".buttonCountNumber");
         let result = container.querySelector(".resultMul");
         let price = Number(container.querySelector(".hiddenPrice").innerHTML);
+        let name = container.querySelector(".catalog__name").innerHTML;
 
         sum += Number(result.innerHTML);
 
@@ -97,8 +103,8 @@ function createBasket(goods) {
             sum += price;
             costSumElem.innerHTML = sum;
             costTotalElem.innerHTML = sum;
-            document.querySelector(".newCheckbox").classList.add("newCheckboxBefore");
-            // costTotalElem.innerHTML = addGiftBox(sum);
+            productCards.get(name).numb = count;
+            localStorage.setItem("cart", JSON.stringify(Array.from(productCards.entries())));
         }
 
         buttonCountMinus.onclick = function () {
@@ -110,15 +116,15 @@ function createBasket(goods) {
                 sum -= price;
                 costSumElem.innerHTML = sum;
                 costTotalElem.innerHTML = sum;
-                document.querySelector(".newCheckbox").classList.add("newCheckboxBefore");
-                // costTotalElem.innerHTML = addGiftBox(sum);
+                productCards.get(name).numb = count;
+                localStorage.setItem("cart", JSON.stringify(Array.from(productCards.entries())));
             }
         }
 
         container.querySelector(".productDelete").onclick = function () {
             let cardName = container.querySelector(".catalog__name").innerHTML;
             document.getElementById("basketContainer").removeChild(container);
-            productCards.delete(cardName, 1);
+            productCards.delete(cardName, "select size");
             localStorage.setItem("cart", JSON.stringify(Array.from(productCards.entries())));
             document.getElementById("countCart").innerHTML = productCards.size;
             sum -= Number(result.innerHTML);
@@ -130,27 +136,4 @@ function createBasket(goods) {
     costSumElem.innerHTML = sum;
     costTotalElem.innerHTML = sum;
 
-    // function addGiftBox(sum) {
-    //     let input = document.getElementById("gift");
-
-    //     if (input.checked) {
-    //         return sum + 10;
-    //     } else {
-    //         return sum;
-    //     }
-    // }
-
-
-    document.querySelector(".newCheckbox").onclick = function () {
-        //     costTotalElem.innerHTML = addGiftBox(sum);
-        document.querySelector(".newCheckbox").classList.remove("newCheckboxBefore");
-        let input = document.getElementById("gift");
-        input.addEventListener('change', (event) => {
-            if (event.currentTarget.checked) {
-                return costTotalElem.innerHTML = sum + 10;
-            } else {
-                return costTotalElem.innerHTML = sum;
-            }
-        })
-    }
 }
