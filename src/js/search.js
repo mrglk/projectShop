@@ -5,7 +5,6 @@ elem.onclick = function (e) {
 
         search.classList.toggle("show");
     }
-
 import {
     getProducts
 } from "./getProducts";
