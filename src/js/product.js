@@ -45,6 +45,17 @@ function renderProductCard(product) {
     };
 };
 
+
+{/* <div class="product__size">
+                            <span class="product__span">Size:</span>
+                            <span class="product__oneSize hidden">One size</span>
+                            <div class="product__selectWrapper">
+                                <div class="product__selectArrow"><img src="../img/arrow.svg"></div>
+                                <select class="product__select">
+                                </select>
+                            </div>
+                        </div> */}
+
 function productInBasket() {
     let product = document.querySelector(".product");
     let productCardsString = localStorage.getItem("cart");
