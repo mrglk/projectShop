@@ -11,9 +11,14 @@ export function initOrder() {
         let message = document.querySelector('.errorMessage');
         if (validForm == true) {
             sendForm();
-            document.getElementById('form').reset();
+            
             message.innerHTML = '';
-            document.querySelector('.container__modal').classList.add('container__modal_visible');
+            if (document.getElementById('byCard').checked == true) {
+                document.location.href = '../uploads/payment/payment.html';
+            } else {
+                document.querySelector('.container__modal').classList.add('container__modal_visible');
+            }
+            document.getElementById('form').reset();
         } else {
             message.innerHTML = 'Please provide all required information';
         }
