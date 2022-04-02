@@ -223,7 +223,7 @@ export function initOrder() {
 
             let purchaseImage = document.createElement('img');
             purchaseImage.classList.add('image');
-            purchaseImage.src = image;
+            purchaseImage.src =  "../uploads/" + image;
             purchasePreview.append(purchaseImage);
 
             let purchaseDescribtion = document.createElement('div');
