@@ -283,7 +283,7 @@ export function initOrder() {
             surname: document.getElementById('userSurname').value,
             email: document.getElementById('userEmail').value,
             phoneNumber: document.getElementById('userPhone').value,
-            subscription: document.getElementById('newsSubscribtion').value,
+            subscription: document.getElementById('newsSubscribtion').checked,
         }
 
         // console.log(json);
@@ -302,7 +302,11 @@ export function initOrder() {
     let submitButton = document.getElementById('submitButton');
     submitButton.onclick = function (e) {
         e.preventDefault();
-        checkValidity();
+        if (localStorage.getItem('cart') == null) {
+            document.querySelector('.errorMessage').innerHTML = 'Your cart is empty';
+        } else {
+            checkValidity();
+        }
     };
 
     const closeModal = document.getElementById('successButton');
