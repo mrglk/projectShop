@@ -1,3 +1,5 @@
+
+export function initOrder() {
 const checkValidity = () => {
     let validForm = Math.min(checkFill("userEmail"), checkPattern('Email'), checkFill("userName"),
         checkFill("userSurname"), checkFill("userPhone"), checkPattern('Phone'), checkFill("userCountry"),
@@ -203,3 +205,4 @@ submitButton.onclick = function (e) {
 document.addEventListener("DOMContentLoader", function () {
     window._shiptorWidget.load();
 });
+}

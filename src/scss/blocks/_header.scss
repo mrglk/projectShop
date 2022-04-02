@@ -46,7 +46,11 @@
         display: none;
     }
 
-    .header__opportunities {
+    .header__opportunities_cart {
+        display: none;
+    }
+
+    .header__links_circle {
         display: none;
     }
 
@@ -54,8 +58,12 @@
         justify-content: flex-start;
     }
 
-    .header__logo {
+    .header__opportunities {
         order: 2;
+    }
+
+    .header__logo {
+        order: 1;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -63,7 +71,7 @@
 
     .header__burgerMenu {
         display: block;
-        order: 1;
+        order: 0;
     }
 
     .header__sidenav {
@@ -122,12 +130,12 @@
         font-size: 20px;
         margin-top: 0;
     }
-}
 
 @media screen and (max-width:400px) {
     .open {
-        width: 100%;
+        width: 50%;
     }
+}
 
     .header__link {
         display: flex;
@@ -136,5 +144,9 @@
 
     .header__sidenav .header__link:nth-child(2) {
         margin-top: 40px;
+    }
+
+    .header__opportunities_search {
+        font-size: 14px;
     }
 }

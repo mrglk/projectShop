@@ -1,19 +1,23 @@
-
-import { getProducts } from "./getProducts";
-import { addBreadcrumbs } from "./catalog";
+import {
+    getProducts
+} from "./getProducts";
+import {
+    addBreadcrumbs
+} from "./catalog";
 
 export function initProductPage() {
-const pageID = window.location.search.replace( '?id=', '');
-getProducts().then(data => {
-    renderProductCard(getProductById(data, pageID));
-}); 
+    const pageID = window.location.search.replace('?id=', '');
+    getProducts().then(data => {
+        renderProductCard(getProductById(data, pageID));
+        productInBasket();
+    });
 }
 
 function getProductById(products, id) {
     return products.find(product => product.id == id);
 };
 
-function renderProductCard (product) {
+function renderProductCard(product) {
     addBreadcrumbs(product.name);
     const img = document.querySelector(".product__img");
     const name = document.querySelector(".product__name");
@@ -40,3 +44,30 @@ function renderProductCard (product) {
         });
     };
 };
+
+function productInBasket() {
+    let product = document.querySelector(".product");
+    let productCardsString = localStorage.getItem("cart");
+    let productCards;
+
+    if (productCardsString == null) {
+        productCards = new Map();
+    } else {
+        productCards = new Map(JSON.parse(productCardsString));
+    }
+    console.log(productCards);
+    document.getElementById("countCart").innerHTML = productCards.size;
+
+    let iconCart = product.querySelector(".product__button");
+    let cardName = product.querySelector(".product__name").innerHTML;
+    let selectSize = document.querySelector(".product__select");
+
+    iconCart.addEventListener("click", (e) => {
+        e.preventDefault();
+        let numberSize = selectSize.value;
+        productCards.set(cardName, numberSize);
+        console.log(productCards);
+        localStorage.setItem("cart", JSON.stringify(Array.from(productCards.entries())));
+        document.getElementById("countCart").innerHTML = productCards.size;
+    })
+}
