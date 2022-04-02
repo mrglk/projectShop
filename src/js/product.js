@@ -59,15 +59,30 @@ function productInBasket() {
     document.getElementById("countCart").innerHTML = productCards.size;
 
     let iconCart = product.querySelector(".product__button");
+    let buyButton = product.querySelector(".product__button__buy");
     let cardName = product.querySelector(".product__name").innerHTML;
     let selectSize = document.querySelector(".product__select");
+    let completeGoods = new Object();
 
-    iconCart.addEventListener("click", (e) => {
-        e.preventDefault();
+    function addToStorage() {
         let numberSize = selectSize.value;
-        productCards.set(cardName, numberSize);
+        completeGoods = {
+            size: numberSize,
+            numb: 1
+        }
+        productCards.set(cardName, completeGoods);
         console.log(productCards);
         localStorage.setItem("cart", JSON.stringify(Array.from(productCards.entries())));
         document.getElementById("countCart").innerHTML = productCards.size;
+    }
+
+    iconCart.addEventListener("click", (e) => {
+        e.preventDefault();
+        addToStorage();
+    })
+    buyButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        addToStorage();
+        window.location.href = 'basket.html';
     })
 }

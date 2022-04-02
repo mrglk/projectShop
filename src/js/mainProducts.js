@@ -1,10 +1,12 @@
-import { getProducts } from "./getProducts";
+import {
+    getProducts
+} from "./getProducts";
 
 export function initProductMain() {
 
-getProducts().then(data => {
-    randomCardsForMain(data)
-});
+    getProducts().then(data => {
+        randomCardsForMain(data)
+    });
 }
 
 function createCardForMain(item) {
@@ -30,8 +32,8 @@ function randomCardsForMain(products) {
     const count = products.length - 1;
 
     for (let i = 0; i < 2; i++) {
-        line1.innerHTML += createCardForMain(products[Math.round(Math.random() * count) + 1]) 
+        line1.innerHTML += createCardForMain(products[Math.round(Math.random() * count) + 1])
     }
 
-    line2.innerHTML = createCardForMain(products[Math.round(Math.random() * count) + 1]) 
+    line2.innerHTML = createCardForMain(products[Math.round(Math.random() * count) + 1])
 };
