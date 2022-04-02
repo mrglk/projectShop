@@ -61,16 +61,18 @@ a:hover .ourFavorites__imgWrapper img {
     color: #555555;
 }
 
+@media screen and (max-width:1400px) {
+    .ourFavorites__title {
+        font-size: 33px;
+    }
+}
+
 
 @media screen and (max-width:1200px) {
 
     .ourFavorites__header {
         margin-top: 80px;
         margin-bottom: 40px;
-    }
-
-    .ourFavorites__title {
-        font-size: 35px;
     }
 
     .ourFavorites__link {
@@ -94,6 +96,11 @@ a:hover .ourFavorites__imgWrapper img {
 
 @media screen and (max-width:$mobile) {
 
+    .ourFavorites__header {
+        margin-top: 100px;
+        margin-bottom: 30px;
+    }
+
     .ourFavorites__line1 {
         display: flex;
         flex-direction: column;
@@ -104,12 +111,6 @@ a:hover .ourFavorites__imgWrapper img {
 
     .ourFavorites__item {
         width: 85%;
-    }
-
-
-    .ourFavorites__header {
-        margin-top: 60px;
-        margin-bottom: 30px;
     }
 
     .ourFavorites__title {

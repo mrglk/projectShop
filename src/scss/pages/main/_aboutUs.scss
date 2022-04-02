@@ -32,6 +32,17 @@
     margin-top: 45px;
 }
 
+@media screen and (max-width:1400px) {
+    .aboutUs__title {
+        font-size: 33px;
+    }
+
+    .aboutUs__description {
+        margin-top: 22px;
+        font-size: 24px;
+    }
+}
+
 @media screen and (max-width:1200px) {
 
     .aboutUs__inner {
@@ -40,10 +51,6 @@
 
     .aboutUs__text {
         margin-right: 40px;
-    }
-
-    .aboutUs__title {
-        font-size: 35px;
     }
 
     .aboutUs__description {

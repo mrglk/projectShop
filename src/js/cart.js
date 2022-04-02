@@ -105,7 +105,6 @@ function createBasket(goods) {
             costTotalElem.innerHTML = sum;
             productCards.get(name).numb = count;
             localStorage.setItem("cart", JSON.stringify(Array.from(productCards.entries())));
-            document.querySelector(".newCheckbox").classList.add("newCheckboxBefore");
         }
 
         buttonCountMinus.onclick = function () {
@@ -119,7 +118,6 @@ function createBasket(goods) {
                 costTotalElem.innerHTML = sum;
                 productCards.get(name).numb = count;
                 localStorage.setItem("cart", JSON.stringify(Array.from(productCards.entries())));
-                document.querySelector(".newCheckbox").classList.add("newCheckboxBefore");
             }
         }
 
@@ -138,15 +136,4 @@ function createBasket(goods) {
     costSumElem.innerHTML = sum;
     costTotalElem.innerHTML = sum;
 
-    document.querySelector(".newCheckbox").onclick = function () {
-        document.querySelector(".newCheckbox").classList.remove("newCheckboxBefore");
-        let input = document.getElementById("gift");
-        input.addEventListener('change', (event) => {
-            if (event.currentTarget.checked) {
-                return costTotalElem.innerHTML = sum + 10;
-            } else {
-                return costTotalElem.innerHTML = sum;
-            }
-        })
-    }
 }
