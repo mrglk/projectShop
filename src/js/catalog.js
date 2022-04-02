@@ -1,4 +1,6 @@
-import { getProducts } from "./getProducts";
+import {
+    getProducts
+} from "./getProducts";
 
 const filterLinks = document.querySelectorAll('.catalogHeader__link');
 const urlGroupName = window.location.search.replace( '?group=', '');
@@ -49,7 +51,7 @@ export function createCardForCatalog(item) {
         <div class="catalog__basketWrapper hidden">
             <div class="catalog__basket">
             <img class="catalog__icon" src="../img/bag.svg" alt="Cart">
-                <a href="" class="catalog__basketLink">Add to cart</a>
+                <a class="catalog__basketLink">Add to cart</a>
             </div>
         </div>
     </div>

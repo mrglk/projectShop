@@ -6,24 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Felis – Order</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body>
+<body id="order">
     <div class="container">
         <div class="containerBg">
-            <header class="header">
+            <header class="header container">
                 <nav class="header__inner container__row">
                     <div class="header__links">
-                        <a class="header__links_style" href="">SHOP NOW</a>
+                        <a class="header__links_style" href="catalog.html">SHOP NOW</a>
                         <a class="header__links_style" href="">LOOKBOOK</a>
                     </div>
                     <div class="header__logo">
                         <img src="../img/logo.svg" alt="logo">
                     </div>
                     <div class="header__opportunities">
-                        <a class="header__links_style" href="">SEARCH</a>
-                        <a class="header__links_style" href="">CART</a>
-                        <a class="header__links_style header__links_circle" href="">0</a>
+                        <a class="header__links_style header__opportunities_search" id="searchBtn">SEARCH</a>
+                        <form method="get" action="search.html" class="header__search">
+                            <input name="search" type="text" class="header__searchInput" id="searchInput"
+                                placeholder="Search...">
+                            <span class="header__searchBtnWrap">
+                                <button class="header__searchBtn" type="submit">
+                                    <i class='bx bx-search'></i>
+                                </button>
+                            </span>
+                        </form>
+                        <a class="header__links_style header__opportunities_cart" href="basket.html">CART</a>
+                        <a class="header__links_style header__links_circle" id="countCart" href="basket.html">0</a>
+                    </div>
+                    <div class="header__burgerMenu">
+                        <div id="header__sidenavId" class="header__sidenav">
+                            <a href="javascript:void(0)" class="header__closeBtn">&times;</a>
+                            <a href="catalog.html" class="header__link">SHOP NOW</a>
+                            <a href="#" class="header__link">LOOKBOOK</a>
+                            <a href="basket.html" class="header__link">CART</a>
+                        </div>
+                        <span id="header__openBtn">&#9776;</span>
                     </div>
                 </nav>
             </header>
@@ -38,15 +57,14 @@
                         <p>Checkout</p>
                     </nav>
 
-                    <form class="checkout__form" id="form"> 
+                    <form class="checkout__form" id="form">
                         <div class="checkout__formItem">
                             <h3>
                                 Contact information
                             </h3>
                             <div class="formField__wrapper">
                                 <label for="email">Your email address *</label>
-                                <input type="email" class="checkout__formField"
-                                    id="userEmail">
+                                <input type="email" class="checkout__formField" id="userEmail">
                                 <div class="errorSign" id="userEmailError">!</div>
                             </div>
                             <div class="checkbox__wrapper">
@@ -56,8 +74,7 @@
                             <fieldset class="userInfo">
                                 <div class="formField__wrapper">
                                     <label for="userName">Name *</label>
-                                    <input type="text" class="checkout__formField"
-                                        id="userName">
+                                    <input type="text" class="checkout__formField" id="userName">
                                     <div class="errorSign" id="userNameError">!</div>
                                 </div>
                                 <div class="formField__wrapper">
@@ -67,7 +84,8 @@
                                 </div>
                                 <div class="formField__wrapper">
                                     <label for="userPhone">Phone *</label>
-                                    <input type="tel" placeholder = "+7 (999) 999-99-99" class="checkout__formField" id="userPhone">
+                                    <input type="tel" placeholder="+7 (999) 999-99-99" class="checkout__formField"
+                                        id="userPhone">
                                     <div class="errorSign" id="userPhoneError">!</div>
                                 </div>
                             </fieldset>
@@ -75,8 +93,7 @@
                                 Delivery
                             </h3>
                             <div class="radio__wrapper">
-                                <input type="radio" name="delivery__radio" id="store"
-                                    class="customRadio" checked>
+                                <input type="radio" name="delivery__radio" id="store" class="customRadio" checked>
                                 <label for="store">Free collect from store</label>
                             </div>
                             <div class="radio__wrapper">
@@ -147,16 +164,16 @@
                                 </div>
 
                                 <div class="costs">
-                                    <div class="subtotalCost">Subtotal: 
+                                    <div class="subtotalCost">Subtotal:
                                         <p>0$</p>
                                     </div>
-                                    <div class="deliveryCost">Shipping: 
+                                    <div class="deliveryCost">Shipping:
                                         <p>0$</p>
                                     </div>
-                                    <div class="discountCost">Discount: 
+                                    <div class="discountCost">Discount:
                                         <p>0$</p>
                                     </div>
-                                    <div class="totalCost">Total: 
+                                    <div class="totalCost">Total:
                                         <p>0$</p>
                                     </div>
                                 </div>

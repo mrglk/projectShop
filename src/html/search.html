@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Felis – About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felis – Search</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-    <div class="containerBg" id="catalog">
+    <div class="containerBg">
         <header class="header container">
             <nav class="header__inner container__row">
                 <div class="header__links">
@@ -22,7 +22,7 @@
                 </div>
                 <div class="header__opportunities">
                     <a class="header__links_style header__opportunities_search" id="searchBtn">SEARCH</a>
-                    <form method="get" action="search.html" class="header__search">
+                    <form class="header__search">
                         <input name="search" type="text" class="header__searchInput" id="searchInput"
                             placeholder="Search...">
                         <span class="header__searchBtnWrap">
@@ -45,45 +45,23 @@
                 </div>
             </nav>
         </header>
-        <main>
-            <div class="container__row">
+        <main class="container">
+            <main class="searchPage container__row">
                 <section class="pageCaption">
                     <a href="index.html">Home</a>
                     <img src="../img/greater.png">
-                    <span>About us</span>
+                    <span>Search</span>
                 </section>
-            </div>
 
-            <section class="aboutPage">
-                <div class="container__row">
-                    <div class="aboutPage__inner">
-                        <h2 class="aboutPage__title">About us</h2>
-                        <p class="aboutPage__content">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore sint modi
-                            recusandae quam culpa ea illum? Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                            Tempore sint modi
-                            recusandae quam culpa ea illum?<br><br>
+                <section class="cartPageHeader">
+                    <p>Search on request:<span id="SearchOnRequest"></span></p>
+                    <a href="catalog.html" class="link">Continue shopping</a>
+                </section>
 
-                            Doloremque adipisci laudantium temporibus distinctio magni veniam deserunt
-                            rerum facilis iure autem repudiandae, similique facere vero excepturi quas
-                            porro.Doloremque adipisci laudantium temporibus distinctio magni veniam deserunt
-                            rerum facilis iure autem repudiandae, similique facere vero.<br><br>
-
-                            Nesciunt perferendis impedit sint odit doloremque, necessitatibus sequi minus.
-                            Quidem labore sed maxime incidunt, quod obcaecati animi hic voluptas
-                            aspernatur officiis quaerat magnam? Doloremque adipisci laudantium temporibus distinctio
-                            magni veniam deserunt
-                            rerum facilis iure autem repudiandae, similique facere vero excepturi quas
-                            porro.Doloremque adipisci laudantium temporibus distinctio magni veniam deserunt
-                            rerum.<br><br>
-
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-
-
+                <section class="pageContent__search ">
+                    <div id="searchContainer"></div>
+                </section>
+            </main>
             <footer class="footer container">
                 <div class="footer__inner container__row">
                     <img src="../img/logo.svg" alt="logo">
@@ -105,6 +83,7 @@
                 <p class="footer__text">@2021 website by rayane saada</p>
             </footer>
     </div>
+
 </body>
 
 </html>
