@@ -16,3 +16,43 @@
         margin-right: 0;
     }
 }
+
+@media screen and (max-width:1400px) {
+    .sectionSubtitle {
+        font-size: 33px;
+        line-height: inherit;
+    }
+}
+
+
+@media screen and (max-width: $tablet) {
+    .sectionSubtitle {
+        font-size: 30px;
+    }
+
+    .subscribe {
+        margin-top: 150px;
+    }
+
+    .followUs {
+        margin-top: 160px;
+    }
+}
+
+
+@media screen and (max-width:$mobile) {
+    .sectionSubtitle {
+        font-size: 25px;
+    }
+
+    .subscribe {
+        margin-top: 120px;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    .sectionSubtitle {
+        font-size: 20px;
+    }
+}
