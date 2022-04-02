@@ -1,3 +1,5 @@
+
+export function initOrder() {
 const checkValidity = () => {
     let validForm = Math.min(checkFill("userEmail"), isEmail(), checkFill("userName"),
         checkFill("userSurname"), checkFill("userPhone"), isPhone(), checkFill("userCountry"),
@@ -133,3 +135,5 @@ submitButton.onclick = function (e) {
     e.preventDefault();
     checkValidity();
 };
+
+}

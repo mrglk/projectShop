@@ -17,9 +17,14 @@ import {
     initProductMain
 } from "./js/mainProducts";
 
+import {
+    initOrder
+} from "./js/order";
+
 const catalog = document.getElementById('catalog');
 const productPage = document.getElementById('product')
 const mainPage = document.getElementById('main')
+const order = document.getElementById('order')
 
 if (catalog) {
     initCatalog().then(() => {
@@ -33,4 +38,8 @@ if (productPage) {
 
 if (mainPage) {
     initProductMain()
+}
+
+if (order) {
+    initOrder()
 }
