@@ -270,8 +270,9 @@ export function initOrder() {
         let total = document.getElementById('total').innerHTML;
         let discount = document.getElementById('discount');
         if (discountValue == "minus10" && discount.innerHTML == "") {
-            document.getElementById('total').innerHTML = total * 0.9;
-            discount.innerHTML = total * 0.1;
+            let discountRound = Math.round(total * 0.1);
+            document.getElementById('total').innerHTML = total - discountRound;
+            discount.innerHTML = discountRound;
         }
     }
 

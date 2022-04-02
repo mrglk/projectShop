@@ -2,6 +2,7 @@ import "./scss/index.scss";
 import "./js/burger.js";
 import "./js/search.js";
 import "./js/cart.js";
+// import "./js/subscribe.js";
 
 import {
     goodsInBasket
@@ -21,6 +22,10 @@ import {
     initOrder
 } from "./js/order";
 
+import {
+    initSubscribe
+} from "./js/subscribe";
+
 const catalog = document.getElementById('catalog');
 const productPage = document.getElementById('product')
 const mainPage = document.getElementById('main')
@@ -38,6 +43,7 @@ if (productPage) {
 
 if (mainPage) {
     initProductMain()
+    initSubscribe()
 }
 
 if (order) {
