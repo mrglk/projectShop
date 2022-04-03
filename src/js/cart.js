@@ -49,7 +49,7 @@ function createBasket(goods) {
                 <div class="catalog__photo productImg">
                     <a href="./product.html?id=${item.id}" class="catalog__imgLink">
                         <div class="catalog__imgWrapper">
-                            <img class="catalog__img" src="../uploads/${item.image}" alt="${item.category}">
+                            <img class="catalog__img" src="./uploads/${item.image}" alt="${item.category}">
                         </div>
                     </a>
                 </div>

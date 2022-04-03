@@ -14,7 +14,7 @@ export function initOrder() {
             
             message.innerHTML = '';
             if (document.getElementById('byCard').checked == true) {
-                document.location.href = '../uploads/payment/payment.html';
+                document.location.href = './uploads/payment/payment.html';
             } else {
                 document.querySelector('.container__modal').classList.add('container__modal_visible');
             }
@@ -223,7 +223,7 @@ export function initOrder() {
 
             let purchaseImage = document.createElement('img');
             purchaseImage.classList.add('image');
-            purchaseImage.src =  "../uploads/" + image;
+            purchaseImage.src =  "./uploads/" + image;
             purchasePreview.append(purchaseImage);
 
             let purchaseDescribtion = document.createElement('div');

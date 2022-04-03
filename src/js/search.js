@@ -24,7 +24,7 @@ function createPage(cards) {
             <div class="catalog__photo">
                 <a href="./product.html?id=${card.id}" class="catalog__imgLink">
                     <div class="catalog__imgWrapper">
-                        <img class="catalog__img" src="../uploads/${card.image}" alt="${card.category}">
+                        <img class="catalog__img" src="./uploads/${card.image}" alt="${card.category}">
                     </div>
                 </a>
             </div>

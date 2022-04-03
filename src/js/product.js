@@ -26,7 +26,7 @@ function renderProductCard(product) {
     const select = document.querySelector(".product__select");
     const selectWrapper = document.querySelector(".product__selectWrapper");
     const oneSize = document.querySelector(".product__oneSize");
-    img.src = `../uploads/${product.image}`;
+    img.src = `./uploads/${product.image}`;
     name.innerText = product.name;
     price.innerText = product.price;
     description.innerText = product.description;

@@ -21,7 +21,7 @@ function createCardForMain(item) {
     <a href="./product.html?id=${item.id}" class="ourFavorites__productLink">
         <div class="ourFavorites__product">
             <div class="ourFavorites__imgWrapper">
-                <img class="ourFavorites__img" src="../uploads/${item.image}" alt="Rings">
+                <img class="ourFavorites__img" src="./uploads/${item.image}" alt="Rings">
             </div>
             <p class="ourFavorites__name">${item.name}</p>
             <p class="ourFavorites__price">${item.price}$</p>
