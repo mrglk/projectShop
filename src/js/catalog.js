@@ -105,7 +105,7 @@ export function createCardForCatalog(item) {
         </div>
         <div class="catalog__basketWrapper hidden">
             <div class="catalog__basket">
-                <img class="catalog__icon js-catalogBasket" src="../img/bag.svg" alt="Cart">
+                <img class="catalog__icon js-catalogBasket" src="./img/bag.svg" alt="Cart">
                 <a class="catalog__basketLink js-catalogBasket">Add to cart</a>
             </div>
         </div>
@@ -134,9 +134,9 @@ export function addBreadcrumbs(name) {
     const container = document.querySelector('.pageCaption');
     container.innerHTML = "";
     container.innerHTML = `<a href="index.html">Home</a>
-    <img src="../img/greater.png">
+    <img src="./img/greater.png">
     <a href="catalog.html">Catalog</a>
-    <img src="../img/greater.png">
+    <img src="./img/greater.png">
     <span>${name.charAt(0).toUpperCase() + name.slice(1)}</span>`
 };
 
