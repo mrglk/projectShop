@@ -6,7 +6,9 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "dev": "cross-env NODE_ENV=development webpack",
-    "start": "cross-env NODE_ENV=development webpack serve --open"
+    "start": "cross-env NODE_ENV=development webpack serve --open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "browserslist": [
     "defaults",
@@ -44,6 +46,7 @@
   },
   "dependencies": {
     "copy-webpack-plugin": "^10.2.4",
+    "gh-pages": "^3.2.3",
     "normalize-scss": "^7.0.1"
   }
 }
