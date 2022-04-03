@@ -152,9 +152,9 @@ function initPagination(totalProd, totalPag, prodPerPage) {
     if (totalProd > prodPerPage) {
         pagination.classList.remove("pagination__inner_hidden");
         const arrowBack = `<li class="pagination__link js-pagi-back"><img class="pagination__arrow js-pagi-back"
-        src="../img/arrowBack.svg">`;
+        src="./img/arrowBack.svg">`;
         const arrowNext = ` <li class="pagination__link js-pagi-next">
-        <img class="pagination__arrow js-pagi-next" src="../img/arrowNext.svg">
+        <img class="pagination__arrow js-pagi-next" src="./img/arrowNext.svg">
     </li>`;
     let newLinks = "";
 
