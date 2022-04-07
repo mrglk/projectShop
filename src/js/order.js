@@ -14,7 +14,7 @@ export function initOrder() {
             
             message.innerHTML = '';
             if (document.getElementById('byCard').checked == true) {
-                document.location.href = '../uploads/payment/payment.html';
+                document.location.href = './uploads/payment/payment.html';
             } else {
                 document.querySelector('.container__modal').classList.add('container__modal_visible');
             }
@@ -223,7 +223,7 @@ export function initOrder() {
 
             let purchaseImage = document.createElement('img');
             purchaseImage.classList.add('image');
-            purchaseImage.src = "../uploads/" + image;
+            purchaseImage.src =  "./uploads/" + image;
             purchasePreview.append(purchaseImage);
 
             let purchaseDescribtion = document.createElement('div');
@@ -270,8 +270,9 @@ export function initOrder() {
         let total = document.getElementById('total').innerHTML;
         let discount = document.getElementById('discount');
         if (discountValue == "minus10" && discount.innerHTML == "") {
-            document.getElementById('total').innerHTML = total * 0.9;
-            discount.innerHTML = total * 0.1;
+            let discountRound = Math.round(total * 0.1);
+            document.getElementById('total').innerHTML = total - discountRound;
+            discount.innerHTML = discountRound;
         }
     }
 

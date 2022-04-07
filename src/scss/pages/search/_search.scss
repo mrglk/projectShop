@@ -5,13 +5,6 @@
     right: 22%;
 }
 
-.header__searchInput:focus {
-    border-color: rgb(204, 198, 198);
-    outline: 0;
-    width: 200px;
-    transition: width 0.2s ease-in 0.2s;
-}
-
 .header__searchInput {
     width: 60px;
     height: 30px;
@@ -20,6 +13,13 @@
     border: 1px solid rgb(204, 198, 198);
     background-color: #F1EAE4;
     color: #1D1B19;
+}
+
+.header__searchInput:focus {
+    border-color: rgb(204, 198, 198);
+    outline: 0;
+    width: 200px;
+    transition: width 0.2s ease-in 0.2s;
 }
 
 .header__searchBtnWrap {
@@ -92,7 +92,7 @@
         display: none;
         position: absolute;
         top: 10%;
-        right: 7.5%;
+        right: 8.5%;
     }
 
     .show {
@@ -101,7 +101,10 @@
 }
 
 @media screen and (max-width:564px) {
+    .header__searchInput {
+        width: 42px;
+    }
     .header__searchInput:focus {
-        width: 80px;
+        width: 70px;
     }
 }

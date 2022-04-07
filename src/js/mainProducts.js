@@ -2,10 +2,19 @@ import {
     getProducts
 } from "./getProducts";
 
+const categoriesLinks = document.querySelectorAll(".categories__link");
+
 export function initProductMain() {
 
     getProducts().then(data => {
-        randomCardsForMain(data)
+        randomCardsForMain(data);
+
+        categoriesLinks.forEach(link => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                window.location.href = `catalog.html?group=${link.innerText.toLowerCase()}`;
+            })
+        });
     });
 }
 
@@ -14,7 +23,7 @@ function createCardForMain(item) {
     <a href="./product.html?id=${item.id}" class="ourFavorites__productLink">
         <div class="ourFavorites__product">
             <div class="ourFavorites__imgWrapper">
-                <img class="ourFavorites__img" src="../uploads/${item.image}" alt="Rings">
+                <img class="ourFavorites__img" src="./uploads/${item.image}" alt="Rings">
             </div>
             <p class="ourFavorites__name">${item.name}</p>
             <p class="ourFavorites__price">${item.price}$</p>
@@ -22,7 +31,6 @@ function createCardForMain(item) {
     </a>
 </div>`;
 };
-
 
 function randomCardsForMain(products) {
     const line1 = document.querySelector(".ourFavorites__line1");

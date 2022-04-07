@@ -32,6 +32,7 @@
 
     &:hover {
         cursor: pointer;
+        transition: color 0.4s ease;
         color: $textColor;
     }
 }
@@ -160,13 +161,19 @@
     margin-right: 40px;
 }
 
-.pagination__linkWrapper {
+.pagination__inner_hidden {
+    display: none;
+}
+
+.pagination__link {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 40px;
     height: 40px;
     border: 1px solid #cacaca;
+    font-size: 20px;
+    color: $textColor;
 
     &:hover {
         transition: background-color 0.3s ease;
@@ -175,14 +182,12 @@
     }
 }
 
-.pagination__linkWrapper_active {
+.pagination__link_active {
     border: 1px solid #969696;
 }
 
-.pagination__link {
-    font-size: 20px;
-    color: $textColor;
-    text-decoration: none;
+.pagination__link__disabled {
+    pointer-events: none;
 }
 
 .pagination__arrow {

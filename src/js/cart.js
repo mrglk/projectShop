@@ -18,11 +18,10 @@ function createBasket(goods) {
     } else {
         productCards = new Map(JSON.parse(productCardsString));
     }
-    console.log(productCards);
     document.getElementById("countCart").innerHTML = productCards.size;
 
     products.forEach(product => {
-        let iconCart = product.querySelector(".js-catalogBasket");
+        let iconCart = product.querySelector(".catalog__basket");
         let cardName = product.querySelector(".catalog__name").innerHTML;
         let completeGoods = new Object();
 
@@ -49,7 +48,7 @@ function createBasket(goods) {
                 <div class="catalog__photo productImg">
                     <a href="./product.html?id=${item.id}" class="catalog__imgLink">
                         <div class="catalog__imgWrapper">
-                            <img class="catalog__img" src="../uploads/${item.image}" alt="${item.category}">
+                            <img class="catalog__img" src="./uploads/${item.image}" alt="${item.category}">
                         </div>
                     </a>
                 </div>
@@ -60,8 +59,7 @@ function createBasket(goods) {
                         </a>
                         <div class="productDelete">delete</div>
                     </div>
-                    <div class="productSize">Size:<span>${productCards.get(item.name).size}</span>
-                    </div>
+                    <div class="productSize">${productCards.get(item.name).size}</div>
                     <div class="productCount">
                         <div class="productCountBt">
                             <button class="buttonCountMinus countBt">-</button>
@@ -124,7 +122,7 @@ function createBasket(goods) {
         container.querySelector(".productDelete").onclick = function () {
             let cardName = container.querySelector(".catalog__name").innerHTML;
             document.getElementById("basketContainer").removeChild(container);
-            productCards.delete(cardName, "select size");
+            productCards.delete(cardName);
             localStorage.setItem("cart", JSON.stringify(Array.from(productCards.entries())));
             document.getElementById("countCart").innerHTML = productCards.size;
             sum -= Number(result.innerHTML);
@@ -135,5 +133,4 @@ function createBasket(goods) {
 
     costSumElem.innerHTML = sum;
     costTotalElem.innerHTML = sum;
-
 }

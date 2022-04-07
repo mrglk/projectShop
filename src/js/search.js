@@ -1,10 +1,11 @@
 let elem = document.getElementById("searchBtn");
 elem.onclick = function (e) {
-        e.preventDefault();
-        let search = document.querySelector(".header__search");
+    e.preventDefault();
+    let search = document.querySelector(".header__search");
 
-        search.classList.toggle("show");
-    }
+    search.classList.toggle("show");
+}
+
 import {
     getProducts
 } from "./getProducts";
@@ -24,7 +25,7 @@ function createPage(cards) {
             <div class="catalog__photo">
                 <a href="./product.html?id=${card.id}" class="catalog__imgLink">
                     <div class="catalog__imgWrapper">
-                        <img class="catalog__img" src="../uploads/${card.image}" alt="${card.category}">
+                        <img class="catalog__img" src="./uploads/${card.image}" alt="${card.category}">
                     </div>
                 </a>
             </div>
@@ -63,7 +64,7 @@ function createPage(cards) {
         cards.forEach((card) => {
             let name = card.querySelector(".catalog__name");
 
-            if (name && name.innerText.includes(searchInput.trim())) {
+            if (name && name.innerText.includes(searchInput.toLowerCase().trim())) {
                 card.classList.remove("catalog__hide");
                 document.getElementById("SearchOnRequest").innerText = searchInput;
                 count++;

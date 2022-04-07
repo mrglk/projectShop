@@ -26,6 +26,13 @@
     }
 }
 
+// @media screen and (max-width:1400px) {
+//     .star {
+//         width: 38px;
+//         height: 38px
+//     }
+// }
+
 .sectionSubtitle {
     font-style: normal;
     font-weight: 400;
@@ -39,6 +46,15 @@
     margin: 149px auto 0 auto;
     display: flex;
     justify-content: space-between;
+
+
+    @media screen and (max-width: 1035px) {
+        width: 70%;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 85%;
+    }
 }
 
 @mixin formTextStyle {
@@ -57,13 +73,24 @@
     @include formTextStyle;
     width: 70%;
 
-
     &:focus {
         outline: none;
 
         &::placeholder {
             color: rgba(0, 0, 0, 0.1);
         }
+    }
+
+    @media screen and (max-width: 1255px) {
+        width: 60%;
+    }
+
+    @media screen and (max-width: 500px) {
+        font-size: smaller;
+    }
+
+    @media screen and (max-width: 300px) {
+        font-size: 12px;
     }
 }
 
@@ -72,8 +99,15 @@
 
     &:hover {
         cursor: pointer;
-        // box-shadow: 0 0 5px rgb(0 0 0 / 50%);
         transform: scale(1.1);
+    }
+
+    @media screen and (max-width: 500px) {
+        font-size: small;
+    }
+
+    @media screen and (max-width: 300px) {
+        font-size: 12px;
     }
 }
 

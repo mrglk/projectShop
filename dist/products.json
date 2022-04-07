@@ -1,0 +1,506 @@
+[
+    {
+        "id": 1,
+        "name": "7 gold bags lari",
+        "category": "jewelry",
+        "price": 490,
+        "size": [
+            15,
+            16,
+            17
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "jewelry/jew1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "shitra handbag",
+        "category": "handbags",
+        "price": 299,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "bags/bag1.jpg"
+    },
+    {
+        "id": 3,
+        "name": "color block blue sweater",
+        "category": "sweaters",
+        "price": 499,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "sweaters/sw1.jpg"
+    },
+    {
+        "id": 4,
+        "name": "solid green sweater",
+        "category": "sweaters",
+        "price": 450,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "sweaters/sw2.jpg"
+    },
+    {
+        "id": 5,
+        "name": "white shirt dali",
+        "category": "shirts",
+        "price": 399,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "shirts/shirt1.jpg"
+    },
+    {
+        "id": 6,
+        "name": "handle satchel bag",
+        "category": "handbags",
+        "price": 350,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "bags/bag2.jpg"
+    },
+    {
+        "id": 7,
+        "name": "letter graphic bag",
+        "category": "handbags",
+        "price": 430,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "bags/bag3.jpg"
+    },
+    {
+        "id": 8,
+        "name": "litchi saddle bag",
+        "category": "handbags",
+        "price": 390,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "bags/bag4.jpg"
+    },
+    {
+        "id": 9,
+        "name": "mini satchel bag",
+        "category": "handbags",
+        "price": 270,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "bags/bag5.jpg"
+    },
+    {
+        "id": 10,
+        "name": "minimalist novelty bag",
+        "category": "handbags",
+        "price": 510,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "bags/bag6.jpg"
+    },
+    {
+        "id": 11,
+        "name": "minimalist square bag",
+        "category": "handbags",
+        "price": 499,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "bags/bag7.jpg"
+    },
+    {
+        "id": 12,
+        "name": "handle chain bag",
+        "category": "handbags",
+        "price": 349,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "bags/bag8.jpg"
+    },
+    {
+        "id": 13,
+        "name": "velvet chain bag",
+        "category": "handbags",
+        "price": 599,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "bags/bag9.jpg"
+    },
+    {
+        "id": 14,
+        "name": "simple pink glasses",
+        "category": "eyewear",
+        "price": 210,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "eyewear/eye1.jpg"
+    },
+    {
+        "id": 15,
+        "name": "acrylic fashion glasses",
+        "category": "eyewear",
+        "price": 299,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "eyewear/eye2.jpg"
+    },
+    {
+        "id": 16,
+        "name": "clear acrylic glasses",
+        "category": "eyewear",
+        "price": 329,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "eyewear/eye3.jpg"
+    },
+    {
+        "id": 17,
+        "name": "leopard decor glasses",
+        "category": "eyewear",
+        "price": 390,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "eyewear/eye4.jpg"
+    },
+    {
+        "id": 18,
+        "name": "metal frame glasses",
+        "category": "eyewear",
+        "price": 350,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "eyewear/eye5.jpg"
+    },
+    {
+        "id": 19,
+        "name": "flat top glasses",
+        "category": "eyewear",
+        "price": 300,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "eyewear/eye6.jpg"
+    },
+    {
+        "id": 20,
+        "name": "square frame glasses",
+        "category": "eyewear",
+        "price": 300,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "eyewear/eye7.jpg"
+    },
+    {
+        "id": 21,
+        "name": "tinted lens glasses",
+        "category": "eyewear",
+        "price": 370,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "eyewear/eye8.jpg"
+    },
+    {
+        "id": 22,
+        "name": "zebra striped pattern glasses",
+        "category": "eyewear",
+        "price": 350,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "eyewear/eye9.jpg"
+    },
+    {
+        "id": 23,
+        "name": "gold layered necklace",
+        "category": "jewelry",
+        "price": 510,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "jewelry/jew2.jpg"
+    },
+    {
+        "id": 24,
+        "name": "pearl decor bracelet",
+        "category": "jewelry",
+        "price": 250,
+        "size": [
+            15.5,
+            16.5,
+            17.5
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "jewelry/jew3.jpg"
+    },
+    {
+        "id": 25,
+        "name": "2pcs pearl beaded necklace",
+        "category": "jewelry",
+        "price": 550,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "jewelry/jew4.jpg"
+    },
+    {
+        "id": 26,
+        "name": "9pcs rhinestone rings",
+        "category": "jewelry",
+        "price": 499,
+        "size": [
+            15,
+            16,
+            17,
+            18
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "jewelry/jew5.jpg"
+    },
+    {
+        "id": 27,
+        "name": "heart charm necklace",
+        "category": "jewelry",
+        "price": 510,
+        "size": null,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "jewelry/jew6.jpg"
+    },
+    {
+        "id": 28,
+        "name": "6pcs rhinestone rings",
+        "category": "jewelry",
+        "price": 480,
+        "size": [
+            15,
+            16,
+            17,
+            18
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "jewelry/jew7.jpg"
+    },
+    {
+        "id": 29,
+        "name": "5pcs gold rings",
+        "category": "jewelry",
+        "price": 310,
+        "size": [
+            15,
+            16,
+            17,
+            18
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "jewelry/jew8.jpg"
+    },
+    {
+        "id": 30,
+        "name": "2pcs minimalist bracelet",
+        "category": "jewelry",
+        "price": 390,
+        "size": [
+            15.5,
+            16.5,
+            17.5
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "jewelry/jew9.jpg"
+    },
+    {
+        "id": 31,
+        "name": "lantern back crop top",
+        "category": "shirts",
+        "price": 399,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "shirts/shirt2.jpg"
+    },
+    {
+        "id": 32,
+        "name": "lantern sleeve crop top",
+        "category": "shirts",
+        "price": 500,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "shirts/shirt3.jpg"
+    },
+    {
+        "id": 33,
+        "name": "solid twist front blouse",
+        "category": "shirts",
+        "price": 450,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "shirts/shirt4.jpg"
+    },
+    {
+        "id": 34,
+        "name": "green sleeve crop top",
+        "category": "shirts",
+        "price": 340,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "shirts/shirt5.jpg"
+    },
+    {
+        "id": 35,
+        "name": "print satin blouse",
+        "category": "shirts",
+        "price": 350,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "shirts/shirt6.jpg"
+    },
+    {
+        "id": 36,
+        "name": "lace hem cami top",
+        "category": "shirts",
+        "price": 550,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "shirts/shirt7.jpg"
+    },
+    {
+        "id": 37,
+        "name": "butterfly black top",
+        "category": "shirts",
+        "price": 290,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "shirts/shirt8.jpg"
+    },
+    {
+        "id": 38,
+        "name": "bishop sleeve blouse",
+        "category": "shirts",
+        "price": 399,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "shirts/shirt9.jpg"
+    },
+    {
+        "id": 39,
+        "name": "graphic shoulder sweater",
+        "category": "sweaters",
+        "price": 350,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "sweaters/sw3.jpg"
+    },
+    {
+        "id": 40,
+        "name": "sleeve drop sweater",
+        "category": "sweaters",
+        "price": 499,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "sweaters/sw4.jpg"
+    },
+    {
+        "id": 41,
+        "name": "colorblock pattern sweater",
+        "category": "sweaters",
+        "price": 510,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "sweaters/sw5.jpg"
+    },
+    {
+        "id": 42,
+        "name": "floral pattern sweater",
+        "category": "sweaters",
+        "price": 500,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "sweaters/sw6.jpg"
+    },
+    {
+        "id": 43,
+        "name": "black solid sweater",
+        "category": "sweaters",
+        "price": 300,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "sweaters/sw7.jpg"
+    },
+    {
+        "id": 44,
+        "name": "colorblock sweater",
+        "category": "sweaters",
+        "price": 340,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "sweaters/sw8.jpg"
+    },
+    {
+        "id": 45,
+        "name": "drop shoulder sweater",
+        "category": "sweaters",
+        "price": 410,
+        "size": [
+            "S",
+            "M",
+            "L"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo iusto, hic expedita veritatis culpa quibusdam minima, adipisci, odit natus excepturi ipsam similique esse tempore explicabo necessitatibus recusandae aliquam dolorem ex.",
+        "image": "sweaters/sw9.jpg"
+    }
+]
