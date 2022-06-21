@@ -1,94 +1,97 @@
 .mainBanner {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .mainBanner__innerText {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .mainBanner__innerText img {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 26px;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 26px;
 }
 
 .mainBanner__text {
-    font-family: $headerFont;
-    font-size: 62.84px;
-    line-height: 79.81px;
+  font-family: $headerFont;
+  font-size: 62.84px;
+  line-height: 79.81px;
 }
 
 .mainBanner__link {
-    font-size: 18px;
-    margin-top: 38px;
+  font-size: 18px;
+  margin-top: 38px;
 }
 
 .mainBanner__photo {
-    width: 50%;
+  width: 50%;
 }
 
 .mainBanner__photo img {
-    height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-@media screen and (min-width:640px) and (max-width:1400px) {
-    .mainBanner__innerText img {
-        width: 40px;
-        height: 40px;
-    }
+@media screen and (min-width: 640px) and (max-width: 1400px) {
+  .mainBanner__innerText img {
+    width: 40px;
+    height: 40px;
+  }
 
-    .mainBanner__text {
-        font-size: 35px;
-        line-height: 55px;
-    }
+  .mainBanner__text {
+    font-size: 35px;
+    line-height: 55px;
+  }
 
-    .mainBanner__link {
-        font-size: 16px;
-    }
+  .mainBanner__link {
+    font-size: 16px;
+  }
 }
 
-@media screen and (max-width:$mobile) {
-    .mainBanner {
-        flex-wrap: wrap;
-    }
+@media screen and (max-width: $mobile) {
+  .mainBanner {
+    flex-wrap: wrap;
+  }
 
-    .mainBanner__innerText {
-        width: 100%;
-        margin-top: 20px;
-    }
+  .mainBanner__innerText {
+    width: 100%;
+    margin-top: 20px;
+  }
 
-    .mainBanner__photo {
-        width: 100%;
-    }
+  .mainBanner__photo {
+    width: 100%;
+  }
 
-    .mainBanner__text {
-        font-size: 40px;
-        line-height: 60px;
-    }
+  .mainBanner__text {
+    font-size: 40px;
+    line-height: 60px;
+  }
 
-    .mainBanner__link {
-        margin-bottom: 20px;
-    }
+  .mainBanner__link {
+    margin-bottom: 20px;
+  }
 }
 
-@media screen and (max-width:$smallMobile) {
-    .mainBanner__innerText img {
-        width: 40px;
-        height: 40px;
-    }
+@media screen and (max-width: $smallMobile) {
+  .mainBanner__innerText img {
+    width: 40px;
+    height: 40px;
+  }
 
-    .mainBanner__text {
-        font-size: 30px;
-        line-height: 50px;
-    }
+  .mainBanner__text {
+    font-size: 30px;
+    line-height: 50px;
+  }
 
-    .mainBanner__link {
-        font-size: 14px;
-    }
+  .mainBanner__link {
+    font-size: 14px;
+  }
 }
