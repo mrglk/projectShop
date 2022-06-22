@@ -10,9 +10,13 @@
 
 ![Felis](https://user-images.githubusercontent.com/91153046/174981605-dbad92a9-339b-44fb-8868-d136746e05f5.gif)
 
+### Демо
+https://mrglk.github.io/projectShop/index.html
+
 ### Запуск проекта
 ```
 git clone https://github.com/mrglk/projectShop.git
 cd projectShop
 npm install
 npm start
+```
