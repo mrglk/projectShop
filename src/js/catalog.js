@@ -5,7 +5,7 @@ const urlGroupName = window.location.search.replace("?group=", "");
 const pagination = document.querySelector(".js-pagination");
 
 export function initCatalog() {
-  getProducts().then((data) => {
+  return getProducts().then((data) => {
     const totalProducts = data.length;
     const productsPerPage = 9;
     const totalPages = Math.ceil(totalProducts / productsPerPage);

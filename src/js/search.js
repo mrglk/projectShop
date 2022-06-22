@@ -1,14 +1,15 @@
-let elem = document.getElementById("searchBtn");
-elem.onclick = function (e) {
+import {
+    getProducts
+} from "./getProducts";
+
+
+    let elem = document.getElementById("searchBtn");
+    elem.onclick = function (e) {
     e.preventDefault();
     let search = document.querySelector(".header__search");
 
     search.classList.toggle("show");
 }
-
-import {
-    getProducts
-} from "./getProducts";
 
 document.addEventListener("DOMContentLoaded", function (event) {
     getProducts().then((cards) => {
@@ -39,7 +40,7 @@ function createPage(cards) {
                 <div class="catalog__basketWrapper hidden">
                     <div class="catalog__basket">
                         <a href="" class="catalog__basketLink">Add to cart</a>
-                        <img class="catalog__icon" src="../img/bag.svg" alt="Cart">
+                        <img class="catalog__icon" src="img/bag.svg" alt="Cart">
                     </div>
                 </div>
             </div>

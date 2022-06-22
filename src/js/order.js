@@ -175,7 +175,6 @@ export function initOrder() {
 
     let elemShiptorWidget = document.querySelector("#shiptor_widget_pvz");
     elemShiptorWidget.addEventListener("onPvzSelect", function (ce) {
-        console.log(ce.detail);
 
         const setAddress = (id, value) => {
             let element = document.getElementById(id);
@@ -186,14 +185,12 @@ export function initOrder() {
     });
 
     const createPurchaseList = (goods) => {
-        console.log(goods);
         let productCardsString = localStorage.getItem("cart");
 
         if (productCardsString == null) {
             return;
         }
         let productCards = JSON.parse(productCardsString);
-        console.log(productCards);
 
         let purchasesList = document.querySelector('.purchasesList');
         let subtotal = 0;
@@ -248,7 +245,6 @@ export function initOrder() {
 
         });
 
-        console.log(subtotal);
         document.getElementById('subtotal').innerHTML = subtotal;
         document.getElementById('total').innerHTML = subtotal;
 
@@ -260,7 +256,6 @@ export function initOrder() {
         document.getElementById('delivery').innerHTML = delivery;
 
         let total = document.getElementById('total');
-        console.log('subtotal=' + subtotal + " discount = " + discount + " delivery=" + delivery);
         total.innerHTML = (+subtotal - +discount + +delivery);
     }
 
@@ -291,8 +286,6 @@ export function initOrder() {
             phoneNumber: document.getElementById('userPhone').value,
             subscription: document.getElementById('newsSubscribtion').checked,
         }
-
-        // console.log(json);
 
         fetch("https://httpbin.org/post", {
                 method: 'POST',

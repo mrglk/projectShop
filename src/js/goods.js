@@ -22,7 +22,6 @@ export function goodsInBasket() {
                 numb: 1
             }
             productCards.set(cardName, completeGoods);
-            console.log(productCards);
             localStorage.setItem("cart", JSON.stringify(Array.from(productCards.entries())));
             document.getElementById("countCart").innerHTML = productCards.size;
         })
