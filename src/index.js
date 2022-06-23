@@ -3,7 +3,6 @@ import "./js/burger.js";
 import "./js/search.js";
 
 import { goodsInBasket } from "./js/goods.js";
-
 import { initCatalog } from "./js/catalog";
 import { initProductPage } from "./js/product";
 import { initProductMain } from "./js/mainProducts";
