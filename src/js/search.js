@@ -1,14 +1,16 @@
 import { getProducts } from "./getProducts";
 
+let elem = document.getElementById("searchBtn");
+elem.onclick = function (e) {
+  e.preventDefault();
+  let search = document.querySelector(".header__search");
+  let clearInput = document.getElementById("searchInput");
+
+  search.classList.toggle("show");
+  clearInput.value = "";
+};
+
 export function initSearch() {
-  let elem = document.getElementById("searchBtn");
-  elem.onclick = function (e) {
-    e.preventDefault();
-    let search = document.querySelector(".header__search");
-
-    search.classList.toggle("show");
-  };
-
   document.addEventListener("DOMContentLoaded", function (event) {
     getProducts().then((cards) => {
       createPage(cards);
@@ -81,6 +83,7 @@ export function initSearch() {
       .addEventListener("click", (e) => {
         e.preventDefault();
         searchCard();
+        document.querySelector(".header__search").classList.remove("show");
       });
   }
 }
