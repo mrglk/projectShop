@@ -1,28 +1,25 @@
-import {
-    getProducts
-} from "./getProducts";
+import { getProducts } from "./getProducts";
 
-
-    let elem = document.getElementById("searchBtn");
-    elem.onclick = function (e) {
+export function initSearch() {
+  let elem = document.getElementById("searchBtn");
+  elem.onclick = function (e) {
     e.preventDefault();
     let search = document.querySelector(".header__search");
 
     search.classList.toggle("show");
-}
+  };
 
-document.addEventListener("DOMContentLoaded", function (event) {
+  document.addEventListener("DOMContentLoaded", function (event) {
     getProducts().then((cards) => {
-        createPage(cards);
-    })
-});
+      createPage(cards);
+    });
+  });
 
-function createPage(cards) {
+  function createPage(cards) {
     let cardContent = "";
 
     for (let card of cards) {
-        cardContent +=
-            `<div class="catalog__item catalog__hide">
+      cardContent += `<div class="catalog__item catalog__hide">
             <div class="catalog__photo">
                 <a href="./product.html?id=${card.id}" class="catalog__imgLink">
                     <div class="catalog__imgWrapper">
@@ -55,31 +52,35 @@ function createPage(cards) {
     searchCard();
 
     function searchCard() {
-        let searchInput = document.getElementById("searchInput").value;
-        if (searchInput.trim().length == 0) {
-            return;
-        }
-        let cards = document.querySelectorAll(".catalog__item");
+      let searchInput = document.getElementById("searchInput").value;
+      if (searchInput.trim().length == 0) {
+        return;
+      }
+      let cards = document.querySelectorAll(".catalog__item");
 
-        let count = 0;
-        cards.forEach((card) => {
-            let name = card.querySelector(".catalog__name");
+      let count = 0;
+      cards.forEach((card) => {
+        let name = card.querySelector(".catalog__name");
 
-            if (name && name.innerText.includes(searchInput.toLowerCase().trim())) {
-                card.classList.remove("catalog__hide");
-                document.getElementById("SearchOnRequest").innerText = searchInput;
-                count++;
-            } else {
-                card.classList.add("catalog__hide");
-            }
-        });
-        if (count == 0) {
-            document.getElementById("SearchOnRequest").innerText = "no items to show";
+        if (name && name.innerText.includes(searchInput.toLowerCase().trim())) {
+          card.classList.remove("catalog__hide");
+          document.getElementById("SearchOnRequest").innerText = searchInput;
+          count++;
+        } else {
+          card.classList.add("catalog__hide");
         }
+      });
+      if (count == 0) {
+        document.getElementById("SearchOnRequest").innerText =
+          "no items to show";
+      }
     }
 
-    document.querySelector(".header__searchBtn").addEventListener("click", (e) => {
+    document
+      .querySelector(".header__searchBtn")
+      .addEventListener("click", (e) => {
         e.preventDefault();
         searchCard();
-    });
+      });
+  }
 }
