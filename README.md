@@ -18,7 +18,7 @@ https://mrglk.github.io/projectShop/index.html
 ### Используемые технологии:
 
 * HTML5/СSS3
-* SAAS
+* SASS
 * JavaScript
 * Webpack
 
